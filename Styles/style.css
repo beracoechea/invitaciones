@@ -131,7 +131,7 @@ nav ul li a:hover {
 
 .Porque-images div img {
     width: 100px; /* Ajusta el ancho de la imagen según sea necesario */
-    height: auto;
+    height: 100px;
 }
 
 .Porque-images div h3 {
