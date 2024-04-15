@@ -102,8 +102,8 @@ nav ul li a:hover {
 }
 
 .carousel-item img {
-    width: 40%;
-    height: 55%;
+    width: 30%;
+    height: 70%;
     display: block;
     margin: auto; /* Centra la imagen horizontalmente */
     border-radius: 30px; /* Borde redondeado para la imagen */
@@ -130,8 +130,8 @@ nav ul li a:hover {
 }
 
 .Porque-images div img {
-    width: 100px; /* Ajusta el ancho de la imagen según sea necesario */
-    height: auto;
+    width: 100px; 
+    height: 100px;
 }
 
 .Porque-images div h3 {
