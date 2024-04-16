@@ -1,82 +1,130 @@
-/* Estilos generales */
-body {
-    background-color: #f8f8f8; /* Color de fondo elegante */
+/*Styles for header*/
+:root{
+    --padding-container: 100px 0;
+    --color-title: #001A49;
 }
-
-
-/* Estilos para el encabezado */
-header {
-    background-color: #333; /* Color de fondo oscuro para resaltar */
-    padding: 20px 0;
-    text-align: center;
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+}
+.hero{
+    width: 100%;
+    height: 200px;
+    min-height: 100px;
+    max-height: 800px;
     position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: #000;
+    background-color: #a09452dd;
 }
 
-.title-box {
-    display: inline-block;
-    background-color: #fff; /* Fondo blanco para el título */
-    padding: 10px 20px;
-    border-radius: 20px 0 20px 0;
+
+.nav{
+    --padding:var(--padding-container);
+    height: 90%;
+    display: flex;
+    align-items: center;
+    
 
 }
-
-header h1 {
-    font-size: 2.5em;
+.nav__logo{
+    display: flex; 
+    align-items: center;
+}
+.nav__icon{
+    width: 12%;
+    height: 12%; 
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.nav__title{
+    font-weight: 300;
     margin: 0;
-    color: #333; /* Color del texto del título */
-}
 
-.menu-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
 }
-
-.menu-btn img {
-    width: 40px;
-    height: auto;
-}
-
-/* Styles for navigation menu */
-nav {
-    display: none;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-nav ul {
+.nav__items{
     list-style: none;
+}
+.nav__link{
+    margin-left: auto;
     padding: 0;
-    margin: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap:2em;
 }
-
-nav ul li {
-    padding: 10px 20px;
-}
-
-nav ul li a {
+.nav__links{
+    color: #000;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
+    font-size: 18px;
 }
-
-nav ul li a:hover {
-    background-color: #f0f0f0;
+.nav__menu{
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
 }
-
-.show-menu {
+.nav__img{
     display: block;
+    width: 30px;
+}
+.nav__close{
+    display: var(--show, none);
+}
+.hero__container{
+    max-width: 800px;
+    display: grid;
+    --padding-container:0;
+    grid-auto-rows: max-content;
+    align-content: center;
+    gap:1em;
+    padding-bottom: 100px;
+    text-align: center;
+}
+@media (max-width:800px){
+    .nav__menu{
+        display: block;
+    }
+    .nav__link--menu{
+        position: fixed;
+        background-color: #f6f0f0;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: .7s opacity;
+    }
+    .nav__link--show{
+        --show:block;
+        opacity: 1;
+        pointer-events: unset;
+
+    }
+    .nav__logo{
+        width: 0;
+        height: 0;
+    }
+    .nav__close{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
 }
 
 
-/* Estilos para el carrusel */
+/* Styles for carrusel */
 .carousel {
     position: relative;
     overflow: hidden;
@@ -92,7 +140,7 @@ nav ul li a:hover {
 
 .carousel-wrapper {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
 }
 
 .carousel-item {

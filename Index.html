@@ -7,23 +7,36 @@
     <link rel="shortcut icon" href="./Images/icon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./Styles/normalize.css">
     <link rel="stylesheet" href="./Styles/style.css">
-    <script src="./JS/menu.js"></script>
+    
+    
 </head>
 <body>
-    <header>
-        <div class="title-box">
-            <h1>WebInvitacion</h1>
+    <header class="hero">
+      <nav class="nav container">
+        <div class="nav__logo">
+            <img src="./Images/icon.jpg"alt="Icon" class="nav__icon">
+            <h2 class="nav__title">WebInvitacion</h2>
         </div>
-        <button class="menu-btn" onclick="toggleMenu()">
-            <img src="./Images/svg/menu.svg" alt="Menú">
-        </button>
-        <nav id="menu">
-            <ul>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Muestras</a></li>
-            </ul>
-        </nav>
+        <ul class="nav__link nav__link--menu">
+            <li class="nav__items">
+                <a href="#" class="nav__links">Inicio</a>
+            </li>
+            <li class="nav__items">
+                <a href="#" class="nav__links">Contacto</a>
+            </li>
+            <li class="nav__items">
+                <a href="#" class="nav__links">Muestras</a>
+            </li>
+            <li class="nav__items">
+                <a href="#" class="nav__links">Paquetes</a>
+            </li>
+            <img src="./Images/svg/close.svg"alt="close" class="nav__close">
+
+        </ul>
+        <div class="nav__menu">
+            <img src="./Images/svg/menu.svg" alt="menu" class="nav__img">
+        </div>
+      </nav>
     </header>
 
 
@@ -122,6 +135,7 @@
     </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
-    <script src="./JS/slider.js"></script>
+    
+    <script src="./JS/menu.js"></script>
 </body>
 </html>
