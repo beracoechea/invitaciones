@@ -19,16 +19,13 @@
     display: grid;
     grid-template-rows: 100px 1fr;
     color: #000;
-    
+    background-color: #fff; /* Color de fondo del header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
-body {
-    /* Fondo con difuminado de azul a rosa */
-    background: linear-gradient(to bottom right, #ffffff, #000000);
-    /* Para hacer que el difuminado ocupe toda la ventana */
-    min-height: 100vh;
-    margin: 0;
-    /* Para asegurarte de que otros elementos se superpongan correctamente */
-    position: relative;
+body{
+font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Color de fondo */
+    color: #333; /* Color del texto principal */
 }
 
 
@@ -53,7 +50,10 @@ body {
 .nav__title{
     font-weight: 300;
     margin: 0;
-
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    color: #333;
+    
 }
 .nav__items{
     list-style: none;
@@ -65,6 +65,7 @@ body {
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     gap:2em;
+    color: #333;
 }
 .nav__links{
     color: #000;
@@ -79,9 +80,11 @@ body {
 .nav__img{
     display: block;
     width: 30px;
+    fill: #333;
 }
 .nav__close{
     display: var(--show, none);
+    fill: #333;
 }
 .hero__container{
     max-width: 800px;
@@ -149,7 +152,7 @@ body {
 
 .carousel-wrapper {
     display: flex;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s ease;
 }
 
 .carousel-item {
@@ -169,17 +172,20 @@ body {
 
 .carousel-item h2,
 .carousel-item p {
-    margin-bottom: 10px; /* Espacio entre el texto y la imagen */
+    color: #333; /* Color del texto en el carrusel */
 }
+
 /*Styles Porque*/
 .Porque-container {
     text-align: center; /* Centra el contenido del contenedor */
+    color: #333;
 }
 
 .Porque-images {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Coloca las imágenes en columnas flexibles */
     grid-gap: 10px; /* Ajusta el espacio entre las imágenes */
+    color: #333;
 }
 
 .Porque-images div {
@@ -232,11 +238,12 @@ body {
     font-family: Arial, sans-serif;
     border-bottom: 2px solid #333;
     padding-bottom: 5px;
+    
 }
 
 .Muestras-text {
     text-align: center;
-    color: #ffffff;
+    color: #000;
     font-size: 18px;
     font-family: Arial, sans-serif;
     margin-top: 0;
@@ -263,13 +270,13 @@ body {
     background-color: #f9f9f9;
     flex: 1 1 300px; /* Establece el ancho mínimo y máximo de cada paquete */
     margin-bottom: 20px; /* Espacio entre los paquetes */
-    background-color: #403D39;
+    background-color: #333;
 }
 
 .paquete h2 {
     margin-top: 0;
     font-size: 24px;
-    color: orange;
+    color: #ff4800;
 }
 
 .paquete p {
@@ -282,11 +289,11 @@ body {
 .boton-comprar {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ff4800;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    background-color: #ff4800;
 }
 
 .boton-comprar:hover {
@@ -296,9 +303,63 @@ body {
     text-align: center;
     margin-top: 20px; /* Ajusta el margen superior según sea necesario */
     font-size: 18px;
-    color: #ffffff; /* Color del texto */
+    color: #000;
 }
 
 .leyenda-Precios p {
     margin: 0; /* Elimina el margen predeterminado del párrafo */
+}
+
+/* Estilos para la sección de Música */
+.Musica {
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 50px 0; /* Espaciado interno superior e inferior */
+    text-align: center; /* Centra el contenido */
+}
+
+.Musica-container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+}
+
+.Musica-title {
+    font-size: 28px; /* Tamaño de fuente del título */
+    color: #6c757d; /* Color del título */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.Musica-text {
+    font-size: 18px; /* Tamaño de fuente del texto */
+    color: #6c757d; /* Color del texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.Musica-img {
+    width: 300px; 
+    height: auto; 
+    border-radius: 50%;
+}
+
+/*Styles for Contacto*/
+footer {
+    background-color: #333; 
+    padding: 20px; 
+    color: #fff; 
+    text-align: center; 
+}
+
+.contacto {
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 10px; 
+}
+
+.contacto-icono {
+    margin: 0 10px; 
+    filter: brightness(0) invert(1);
+}
+
+.contacto-icono img {
+    width: 40px; 
+    height: 40px;
 }
