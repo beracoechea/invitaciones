@@ -19,7 +19,16 @@
     display: grid;
     grid-template-rows: 100px 1fr;
     color: #000;
-    background-color: #a09452dd;
+    
+}
+body {
+    /* Fondo con difuminado de azul a rosa */
+    background: linear-gradient(to bottom right, #ffffff, #000000);
+    /* Para hacer que el difuminado ocupe toda la ventana */
+    min-height: 100vh;
+    margin: 0;
+    /* Para asegurarte de que otros elementos se superpongan correctamente */
+    position: relative;
 }
 
 
@@ -227,7 +236,7 @@
 
 .Muestras-text {
     text-align: center;
-    color: #666;
+    color: #ffffff;
     font-size: 18px;
     font-family: Arial, sans-serif;
     margin-top: 0;
@@ -239,12 +248,14 @@
 
 .Precios {
     display: flex;
+    margin-top: 7%;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas si no caben en una sola línea */
 }
 
 .paquete {
+    
     text-align: center;
     padding: 20px;
     border: 2px solid #ccc;
@@ -252,22 +263,26 @@
     background-color: #f9f9f9;
     flex: 1 1 300px; /* Establece el ancho mínimo y máximo de cada paquete */
     margin-bottom: 20px; /* Espacio entre los paquetes */
+    background-color: #403D39;
 }
 
 .paquete h2 {
     margin-top: 0;
     font-size: 24px;
+    color: orange;
 }
 
 .paquete p {
     margin-bottom: 10px;
     font-size: 18px;
+    color: rgb(255, 255, 255);
+
 }
 
 .boton-comprar {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #ff4800;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -280,8 +295,8 @@
 .leyenda-Precios {
     text-align: center;
     margin-top: 20px; /* Ajusta el margen superior según sea necesario */
-    font-size: 14px;
-    color: #666; /* Color del texto */
+    font-size: 18px;
+    color: #ffffff; /* Color del texto */
 }
 
 .leyenda-Precios p {
