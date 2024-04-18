@@ -42,18 +42,27 @@ font-family: Arial, sans-serif;
     align-items: center;
 }
 .nav__icon{
-    width: 12%;
-    height: 12%; 
+    width: 70px;
+    height: 70px; 
     border-radius: 50%;
     margin-right: 10px;
 }
-.nav__title{
+.nav__title {
     font-weight: 300;
     margin: 0;
     font-family: 'Roboto', sans-serif;
     font-style: italic;
     color: #333;
-    
+    animation: colorChange 2s infinite alternate; /* Aplica la animación */
+}
+
+@keyframes colorChange {
+    0% {
+        color: #000000; /* Color inicial */
+    }
+    100% {
+        color: #f3f0f0; /* Color final */
+    }
 }
 .nav__items{
     list-style: none;
@@ -162,7 +171,7 @@ font-family: Arial, sans-serif;
 }
 
 .carousel-item img {
-    width: 30%;
+    width: 45%;
     height: 70%;
     display: block;
     margin: auto; /* Centra la imagen horizontalmente */
@@ -179,6 +188,7 @@ font-family: Arial, sans-serif;
 .Porque-container {
     text-align: center; /* Centra el contenido del contenedor */
     color: #333;
+    
 }
 
 .Porque-images {
@@ -186,19 +196,23 @@ font-family: Arial, sans-serif;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Coloca las imágenes en columnas flexibles */
     grid-gap: 10px; /* Ajusta el espacio entre las imágenes */
     color: #333;
+   
 }
 
 .Porque-images div {
-    text-align: center; /* Centra el contenido dentro de cada bloque de imagen */
+    text-align: center; 
+    background-color: #c0c3c5;
+    opacity: 0.5;
 }
 
 .Porque-images div img {
     width: 100px;
     height: 100px;
+    
 }
 
 .Porque-images div h3 {
-    margin-top: 10px; /* Ajusta el margen superior del texto según sea necesario */
+    margin-top: 10px; 
 }
 
 /* Styles for muestras */
@@ -213,20 +227,20 @@ font-family: Arial, sans-serif;
     overflow-x: auto;
     width: 100%;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Oculta las barras de desplazamiento en Firefox */
-    -ms-overflow-style: none; /* Oculta las barras de desplazamiento en Internet Explorer */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
 }
 
 .Muestras-carousel::-webkit-scrollbar {
-    display: none; /* Oculta las barras de desplazamiento en WebKit (Chrome, Safari, etc.) */
+    display: none;
 }
 
 .Muestras-carousel img {
-    width: 300px; /* Ancho fijo de las imágenes */
+    width: 300px; 
     height: auto;
-    flex-shrink: 0; /* Evita que las imágenes se encogen para ajustarse al contenedor */
-    margin-right: 10px; /* Espacio entre las imágenes */
+    flex-shrink: 0; 
     scroll-snap-align: start;
+    margin-right: 20px;
 }
 
 .Muestras-title {
@@ -276,7 +290,7 @@ font-family: Arial, sans-serif;
 .paquete h2 {
     margin-top: 0;
     font-size: 24px;
-    color: #ff4800;
+    color: goldenrod;
 }
 
 .paquete p {
@@ -293,7 +307,8 @@ font-family: Arial, sans-serif;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    background-color: #ff4800;
+    background-color: rgb(217, 187, 17);
+    
 }
 
 .boton-comprar:hover {
@@ -312,32 +327,33 @@ font-family: Arial, sans-serif;
 
 /* Estilos para la sección de Música */
 .Musica {
-    background-color: #f8f9fa; /* Color de fondo */
-    padding: 50px 0; /* Espaciado interno superior e inferior */
-    text-align: center; /* Centra el contenido */
+    background-color: #f8f9fa; 
+    padding: 50px 0;
+    text-align: center; 
 }
 
 .Musica-container {
-    max-width: 800px; /* Ancho máximo del contenedor */
-    margin: 0 auto; /* Centra horizontalmente el contenedor */
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 50px;
 }
 
 .Musica-title {
-    font-size: 28px; /* Tamaño de fuente del título */
-    color: #6c757d; /* Color del título */
-    margin-bottom: 20px; /* Espaciado inferior */
+    font-size: 28px; 
+    color: #6c757d;
+    margin-bottom: 20px; 
 }
 
 .Musica-text {
-    font-size: 18px; /* Tamaño de fuente del texto */
-    color: #6c757d; /* Color del texto */
-    margin-bottom: 20px; /* Espaciado inferior */
+    font-size: 18px; 
+    color: #6c757d; 
+    margin-bottom: 20px; 
 }
 
 .Musica-img {
     width: 300px; 
     height: auto; 
-    border-radius: 50%;
+    border-radius: 20% 0 20% 0;
 }
 
 /*Styles for Contacto*/
