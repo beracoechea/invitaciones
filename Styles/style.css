@@ -19,7 +19,7 @@
     display: grid;
     grid-template-rows: 100px 1fr;
     color: #000;
-    background-color: #fff; /* Color de fondo del header */
+    background-color: #000; /* Color de fondo del header */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 body{
@@ -58,10 +58,10 @@ font-family: Arial, sans-serif;
 
 @keyframes colorChange {
     0% {
-        color: #000000; /* Color inicial */
+        color: #fff; /* Color inicial */
     }
     100% {
-        color: #f3f0f0; /* Color final */
+        color: rgb(217, 187, 17); /* Color final */
     }
 }
 .nav__items{
@@ -77,7 +77,7 @@ font-family: Arial, sans-serif;
     color: #333;
 }
 .nav__links{
-    color: #000;
+    color: #fff;
     text-decoration: none;
     font-size: 18px;
 }
@@ -318,6 +318,7 @@ font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 20px; /* Ajusta el margen superior según sea necesario */
     font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #000;
 }
 
@@ -358,7 +359,7 @@ font-family: Arial, sans-serif;
 
 /*Styles for Contacto*/
 footer {
-    background-color: #333; 
+    background-color: #000; 
     padding: 20px; 
     color: #fff; 
     text-align: center; 
