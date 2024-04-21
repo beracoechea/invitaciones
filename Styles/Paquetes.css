@@ -12,12 +12,14 @@
     height: auto;
     margin-bottom: 10px; /* Espacio inferior */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 0 20px 0 20px;
 }
 
 .Basico-title {
     font-size: 24px; /* Tamaño de fuente más grande */
     color: #333; /* Color de texto oscuro */
     margin-bottom: 10px; /* Espacio inferior */
+    
 }
 
 .Basico-text {
@@ -49,4 +51,3 @@
 .Nota {
     margin-top: 20px;
 }
-
