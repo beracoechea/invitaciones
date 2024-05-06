@@ -1,0 +1,27 @@
+body {
+    background-image: url("/Images/Fondo_Invitaciones.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.Encima {
+    text-align: center;
+    margin: 400px auto;
+    max-width: 600px;
+    font-size: 24px;
+}
+
+.Encima h1 {
+    text-align: center; /* Alinea el texto al centro */
+    shape-outside: circle(100%); /* Crea un área de forma circular alrededor del texto */
+}
+
+.Novios {
+    align-items: center;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 600px; /* Esto limita el ancho del mapa */
+    margin: 0 auto; /* Esto centra el mapa horizontalmente */
+}
