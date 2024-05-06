@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitify</title>
+    <link rel="shortcut icon" href="./Images/icon.png" type="image/x-icon">
+    <style>
+        header {
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+        .Nombres {
+            background-color: #EFD9B0; /* Tono beige */
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .pareja {
+            border-radius: 50%;
+            height: 40%;
+            width: 50%;
+        }
+        .frase {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 24px;
+            color: #3E2723; /* Tono marrón oscuro */
+            margin-top: 20px;
+            font-style: italic;
+            text-align: center;
+        }
+        .fecha {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #3E2723; /* Tono marrón oscuro */
+        }
+        .Vestimenta {
+            background-color: #D8C2B0; /* Tono beige claro */
+            margin: 20px;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .Vestimenta h2 {
+            color: #3E2723; /* Tono marrón oscuro */
+        }
+        .Vestimenta p {
+            color: #3E2723; /* Tono marrón oscuro */
+            font-style: italic;
+        }
+        .Vestimenta img {
+            height: 60px;
+            width: 60px;
+            margin: 20px;
+        }
+        .Ubicaciones {
+            background-color: #D4B59E; /* Tono beige claro */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            flex-wrap: wrap;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+        .UbicacionT {
+            flex-basis: 45%;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 0;
+            background-color: #BCA292; /* Tono beige medio */
+            border-radius: 10px;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .UbicacionS {
+            flex-basis: 45%;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 0;
+            background-color: #BCA292; /* Mismo tono beige medio */
+            border-radius: 10px;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .CImg {
+            width: 35%;
+            border-radius: 40px 0 40px 0;
+            margin-bottom: 10px;
+        }
+        .info {
+            margin: 0 10px;
+            color: #3E2723; /* Tono marrón oscuro */
+            text-align: left;
+            font-family: Arial, sans-serif;
+        }
+        .info h3 {
+            margin-top: 0;
+            color: #3E2723; /* Tono marrón oscuro */
+            font-family: Arial, sans-serif;
+        }
+        .info p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .confirmar {
+            background-color: #795548; /* Tono marrón */
+            color: #FFFFFF; /* Blanco */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .confirmar:hover {
+            background-color: #6d4c41; /* Tono marrón más oscuro al pasar el ratón */
+        }
+
+        #panel {
+            display: none;
+            background-color: #D4B59E; /* Tono beige claro */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #panel label {
+            display: block;
+            margin-bottom: 10px;
+            color: #3E2723; /* Tono marrón oscuro */
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        #panel input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #3E2723; /* Tono marrón oscuro */
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        #panel button[type="submit"] {
+            background-color: #795548; /* Tono marrón */
+            color: #FFFFFF; /* Blanco */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #panel button[type="submit"]:hover {
+            background-color: #5D4037; /* Tono marrón más oscuro */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <section class="Nombres">
+            <h2>Nuestra Boda</h2>
+            <h1>Jorge & Gabriela</h1>
+            <img class="pareja" src="Images/pareja.jpg">
+            <p class="frase">"En cada latido, en cada suspiro, en cada mirada, hay un eco de nuestro amor que nos guía hacia este día mágico. ¡Ven y únete a nosotros mientras celebramos el comienzo de nuestra eternidad juntos!"</p>
+            <div class="fecha">Fecha de la Boda: 20 de Julio, 2024</div>
+        </section>
+
+        <section class="Vestimenta">
+            <h2>Código de Vestimenta</h2>
+            <p>"Te invitamos a vestir elegante y formal para esta ocasión especial."</p>
+            <img src="Images/svg/traje.png" alt="Formal">
+            <img src="Images/svg/vestido.png" alt="Formal">
+        </section>
+
+        <section class="Ubicaciones">
+            <div class="UbicacionT">
+                <img class="CImg" src="Images/Templo.jpg" alt="Templo">
+                <div class="info">
+                    <h3>Catedral de Guadalajara</h3>
+                    <p><strong>Ubicación:</strong> Av. Fray Antonio Alcalde 10, Zona Centro, 44100 Guadalajara, Jal.</p>
+                    <p><strong>Horario:</strong> 5:00 - 6:00 PM</p>
+                    <a href="https://maps.app.goo.gl/3YAx6EC36c9jFbjWA">Ver en el mapa</a>
+                </div>
+            </div>
+
+            <div class="UbicacionS">   
+                <div class="info">
+                    <h3>Lago del Rey</h3>
+                    <p><strong>Ubicación:</strong> Av Ramón Corona #5243, 45201 Guadalajara, Jal.</p>
+                    <p><strong>Horario:</strong> 7:00 PM - 1:00 AM</p>
+                    <a href="https://maps.app.goo.gl/cP92VA2VDhX485DP6">Ver en el mapa</a>
+                </div>
+                <img class="CImg" src="Images/Evento.jpg" alt="Salón de Eventos">
+            </div>
+        </section>
+
+        <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
+        <div id="panel" style="display: none;">
+            <form id="formulario" onsubmit="enviarDatos(event)">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </header>
+
+    <script>
+        function mostrarPanel() {
+            document.getElementById('panel').style.display = 'block';
+        }
+    
+        function enviarDatos(event) {
+            event.preventDefault(); // Evita que el formulario se envíe normalmente
+    
+            var nombre = document.getElementById('nombre').value;
+    
+            // Aquí enviarías los datos al servidor utilizando AJAX
+            // Por ejemplo, usando fetch o XMLHttpRequest
+            // Una vez que recibas una respuesta del servidor, podrías mostrar un mensaje de confirmación al usuario
+    
+            // Ocultar el panel después de enviar los datos
+            document.getElementById('panel').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
