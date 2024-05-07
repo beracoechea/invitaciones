@@ -1,27 +1,218 @@
 body {
-    background-image: url("/Images/Fondo_Invitaciones.jpg");
+    /* background-image: url("/Images/Fondo_Invitaciones.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    background-color: #fff;
 }
 
-.Encima {
-    text-align: center;
-    margin: 400px auto;
+header {
     max-width: 600px;
-    font-size: 24px;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
 }
-
-.Encima h1 {
-    text-align: center; /* Alinea el texto al centro */
-    shape-outside: circle(100%); /* Crea un área de forma circular alrededor del texto */
-}
-
-.Novios {
+.Nombres {
+    background-color: #7A3B69; /* Tono beige */
+    color: #fff;
+    font-family:'Courier New', Courier, monospace;
     align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+.pareja {
+    border-radius: 20%;
+    height: 50%;
+    width: 50%;
+}
+.frase {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 24px;
+    color: #fff; /* Tono marrón oscuro */
+    margin-top: 20px;
+    font-style: italic;
+    text-align: center;
+}
+.fecha {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #fff; /* Tono marrón oscuro */
+}
+.Vestimenta {
+    background-color: #9A879D; /* Tono beige claro */
+    margin: 20px;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+.Vestimenta h2 {
+    color: #000; /* Tono marrón oscuro */
+}
+.Vestimenta p {
+    color: #000; /* Tono marrón oscuro */
+    font-style: italic;
+}
+.Vestimenta img {
+    height: 60px;
+    width: 60px;
+    margin: 20px;
+}
+.Ubicaciones {
+    background-color: #CFCFCD; /* Tono beige claro */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.UbicacionT {
+    flex-basis: 45%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+    background-color: #D7DEDC; /* Tono beige medio */
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+.UbicacionS {
+    flex-basis: 45%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+    background-color: #D7DEDC; /* Mismo tono beige medio */
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+.CImg {
+    width: 35%;
+    border-radius: 40px 0 40px 0;
+    margin-bottom: 10px;
+}
+.info {
+    margin: 0 10px;
+    color: #000; /* Tono marrón oscuro */
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+.info h3 {
+    margin-top: 0;
+    color: #000; /* Tono marrón oscuro */
+    font-family: Arial, sans-serif;
+}
+.info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.confirmar {
+    background-color: #7A3B69; /* Tono marrón */
+    color: #FFFFFF; /* Blanco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+.confirmar:hover {
+    background-color: #563440; /* Tono marrón más oscuro al pasar el ratón */
 }
 
-.map-container {
-    width: 100%;
-    max-width: 600px; /* Esto limita el ancho del mapa */
-    margin: 0 auto; /* Esto centra el mapa horizontalmente */
+#panel {
+    display: none;
+    background-color: #CFCFCD; /* Tono beige claro */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#panel label {
+    display: block;
+    margin-bottom: 10px;
+    color: #3E2723; /* Tono marrón oscuro */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+#panel input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #3E2723; /* Tono marrón oscuro */
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+#panel button[type="submit"] {
+    background-color: #7A3B69; /* Tono marrón */
+    color: #FFFFFF; /* Blanco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#panel button[type="submit"]:hover {
+    background-color: #563440; /* Tono marrón más oscuro */
+}
+
+#trivia {
+    display: none;
+    background-color: #CFCFCD; /* Tono beige claro */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#trivia label {
+    display: block;
+    margin-bottom: 10px;
+    color: #3E2723; /* Tono marrón oscuro */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+#trivia input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #3E2723; /* Tono marrón oscuro */
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+#trivia button[type="submit"] {
+    background-color: #7A3B69; /* Tono marrón */
+    color: #FFFFFF; /* Blanco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#trivia button[type="submit"]:hover {
+    background-color: #563440; /* Tono marrón más oscuro */
 }
