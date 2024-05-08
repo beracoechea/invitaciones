@@ -14,51 +14,73 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             position: relative;
-            background-color: #EFD9B0; /* Tono beige */
+            background-color: #dcd9d6; /* Tono gris claro */
         }
+      
+
         .Nombres {
-            align-items: center;
-            padding: 20px;
-            border-radius: 10px;
+            text-align: center;
+            background-image: url("Images/pareja.jpg");
+            background-size: cover; /* Ajustar la imagen para cubrir todo el contenedor */
+            background-position: center; /* Centrar la imagen */
+            border-radius: 10px; /* Añadir bordes redondeados al contenedor */
+            margin: 0 auto; /* Centrar el contenedor horizontalmente */
+            display: flex; /* Usar flexbox para centrar verticalmente el contenido */
+            flex-direction: column; /* Alinear el contenido en columna */
+            justify-content: center; /* Centrar verticalmente el contenido */
+            padding: 20px; /* Agregar espacio alrededor del contenido */
+            position: relative; /* Establecer posición relativa para alinear el contenido */
+            color: #ffffff; /* Color del texto */
             position: relative;
         }
-        .Nombres h1 {
-            font-style: italic;
-            font-size: 35px;
+
+        .Nombres::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px; /* Mismo borde redondeado que el contenedor */                                                                 
         }
 
-        .pareja {
-            border-radius: 50%;
-            height: 40%;
-            width: 50%;
+        .Nombres h2, .Nombres h1 {
+            margin: 0; /* Eliminar el margen predeterminado */
+            font-size: 35px;
+            font-style: italic;
         }
         .frase {
+            background-color: rgba(39, 39, 39, 0.7); /* Fondo semitransparente */
+
             font-family: "Times New Roman", Times, serif;
-            font-size: 24px;
+            font-size: 23px;
             margin-top: 20px;
             font-style: italic;
-            text-align: center;
-            color: #3E2723; /* Tono marrón oscuro */
+            color: #ffffff; /* Color blanco */
+            padding: 10px;
+            border-radius: 10px;
         }
         .fecha {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 14px;
-            color: #3E2723; /* Tono marrón oscuro */
+            background-color: rgba(39, 39, 39, 0.7); /* Fondo semitransparente */
+
+            margin-top: 20px; /* Ajustar el margen superior para colocar debajo del texto */
+            font-size: 18px;
+            color: #ffffff; /* Color blanco */
+            padding: 10px;
+            border-radius: 10px;
         }
         .Vestimenta {
             margin: 20px;
             align-items: center;
             padding: 20px;
             border-radius: 10px;
-            background-color: #D8C2B0; /* Tono beige claro */
+            background-color: #817f7e; /* Tono gris oscuro */
         }
         .Vestimenta h2 {
-            color: #3E2723; /* Tono marrón oscuro */
+            color: #dcd9d6; /* Tono gris claro */
         }
         .Vestimenta p {
-            color: #3E2723; /* Tono marrón oscuro */
+            color: #dcd9d6; /* Tono gris claro */
             font-style: italic;
         }
         .Vestimenta img {
@@ -74,7 +96,7 @@
             flex-wrap: wrap;
             flex-direction: column;
             border-radius: 10px;
-            background-color: #D4B59E; /* Tono beige claro */
+            background-color: #464445; /* Tono gris medio */
         }
         .UbicacionT, .UbicacionS {
             flex-basis: 45%;
@@ -82,8 +104,8 @@
             display: flex;
             flex-direction: row;
             margin-left: 0;
-            background-color: #BCA292; /* Tono beige medio */
-            border-radius: 10px;
+            background-color: #252525; /* Tono gris más oscuro */
+            border-radius: 20px;
             align-items: center;
             justify-content: space-around;
         }
@@ -94,13 +116,14 @@
         }
         .info {
             margin: 0 10px;
-            color: #3E2723; /* Tono marrón oscuro */
+            color: #dcd9d6; /* Tono gris claro */
             text-align: left;
             font-family: Arial, sans-serif;
+
         }
         .info h3 {
             margin-top: 0;
-            color: #3E2723; /* Tono marrón oscuro */
+            color: #dcd9d6; /* Tono gris claro */
             font-family: Arial, sans-serif;
         }
         .info p {
@@ -108,8 +131,8 @@
             font-size: 16px;
         }
         .confirmar {
-            background-color: #795548; /* Tono marrón */
-            color: #FFFFFF; /* Blanco */
+            background-color: #090909; /* Tono negro */
+            color: #ffffff; /* Blanco */
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -119,12 +142,12 @@
             margin-top: 20px;
         }
         .confirmar:hover {
-            background-color: #6d4c41; /* Tono marrón más oscuro al pasar el ratón */
+            background-color: #252525; /* Tono gris más oscuro al pasar el ratón */
         }
 
         #panel {
             display: none;
-            background-color: #D4B59E; /* Tono beige claro */
+            background-color: #464445; /* Tono gris medio */
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
@@ -137,7 +160,7 @@
         #panel label {
             display: block;
             margin-bottom: 10px;
-            color: #3E2723; /* Tono marrón oscuro */
+            color: #dcd9d6; /* Tono gris claro */
             font-family: Arial, sans-serif;
             font-size: 16px;
         }
@@ -145,7 +168,7 @@
         #panel input[type="text"] {
             width: calc(100% - 20px);
             padding: 10px;
-            border: 1px solid #3E2723; /* Tono marrón oscuro */
+            border: 1px solid #dcd9d6; /* Tono gris claro */
             border-radius: 5px;
             font-size: 16px;
             margin-bottom: 20px;
@@ -153,8 +176,8 @@
         }
 
         #panel button[type="submit"] {
-            background-color: #795548; /* Tono marrón */
-            color: #FFFFFF; /* Blanco */
+            background-color: #090909; /* Tono negro */
+            color: #ffffff; /* Blanco */
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -163,16 +186,27 @@
         }
 
         #panel button[type="submit"]:hover {
-            background-color: #5D4037; /* Tono marrón más oscuro */
+            background-color: #252525; /* Tono gris más oscuro */
+        }
+
+        .info a {
+            color: #ffffff; /* Blanco */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .info a:hover {
+            color: #dcd9d6; /* Tono gris claro */
         }
     </style>
+
 </head>
+
 <body>
     <header class="header">
         <section class="Nombres">
             <h2>Nuestra Boda</h2>
-            <h1>Jorge & Gabriela</h1>
-            <img class="pareja" src="Images/pareja.jpg">
+            <h1>Oscar & Karla</h1>
             <p class="frase">"En cada latido, en cada suspiro, en cada mirada, hay un eco de nuestro amor que nos guía hacia este día mágico. ¡Ven y únete a nosotros mientras celebramos el comienzo de nuestra eternidad juntos!"</p>
             <div class="fecha">Fecha de la Boda: 20 de Julio, 2024</div>
         </section>
@@ -183,7 +217,6 @@
             <img src="Images/svg/traje.png" alt="Formal">
             <img src="Images/svg/vestido.png" alt="Formal">
         </section>
-
         <section class="Ubicaciones">
             <div class="UbicacionT">
                 <img class="CImg" src="Images/Templo.jpg" alt="Templo">
@@ -205,7 +238,6 @@
                 <img class="CImg" src="Images/Evento.jpg" alt="Salón de Eventos">
             </div>
         </section>
-
         <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
         <div id="panel" style="display: none;">
             <form id="formulario" onsubmit="enviarDatos(event)">
@@ -234,6 +266,6 @@
             document.getElementById('panel').style.display = 'none';
         }
     </script>
-
+    
 </body>
 </html>

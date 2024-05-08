@@ -87,13 +87,13 @@ font-family: Arial, sans-serif;
     display: none;
 }
 .nav__img{
-    display: block;
     width: 30px;
-    fill: #333;
+    fill: #ffffff;
+    display: block;
 }
 .nav__close{
     display: var(--show, none);
-    fill: #333;
+    fill: #ffffff;
 }
 .hero__container{
     max-width: 800px;
@@ -109,9 +109,12 @@ font-family: Arial, sans-serif;
     .nav__menu{
         display: block;
     }
+    .nav__link.nav__links {
+        color: #000; /* Cambia el color del texto del menú en dispositivos móviles */
+    }
     .nav__link--menu{
         position: fixed;
-        background-color: #f6f0f0;
+        background-color: #000000;
         top: 0;
         left: 0;
         height: 100%;
@@ -236,11 +239,11 @@ font-family: Arial, sans-serif;
 }
 
 .Muestras-carousel img {
-    width: 300px; 
-    height: auto;
-    flex-shrink: 0; 
-    scroll-snap-align: start;
-    margin-right: 20px;
+    width: 350px; /* Ancho deseado */
+    height: 500px; /* Altura automática para mantener la proporción de aspecto */
+    flex-shrink: 0; /* Evita que las imágenes se contraigan si el espacio es insuficiente */
+    scroll-snap-align: start; /* Alinea las imágenes al inicio del contenedor */
+    margin-right: 20px; /* Espacio entre las imágenes */
 }
 
 .Muestras-title {
