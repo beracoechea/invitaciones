@@ -1,23 +1,20 @@
 .package-info {
     margin-top: 20px;
     text-align: center; /* Centra el contenido horizontalmente */
-    background-color: #f9f9f9; /* Fondo claro */
+    background-color: #cac6c0; /* Fondo claro */
     padding: 20px; /* Espacio interior */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 10px; /* Bordes redondeados */ 
 }
 
 .Basico-img {
     width: 20%;
     height: auto;
     margin-bottom: 10px; /* Espacio inferior */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    border-radius: 0 20px 0 20px;
 }
 
 .Basico-title {
     font-size: 24px; /* Tamaño de fuente más grande */
-    color: #333; /* Color de texto oscuro */
+    color: #2e2824; /* Color de texto oscuro */
     margin-bottom: 10px; /* Espacio inferior */
     
 }
@@ -25,7 +22,7 @@
 .Basico-text {
     font-size: 16px; /* Tamaño de fuente */
     line-height: 1.6; /* Espacio entre líneas */
-    color: #666; /* Color de texto más suave */
+    color: #2e2824; /* Color de texto más suave */
 }
 
 /* Estilos para la sección de Métodos de Pago */
