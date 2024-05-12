@@ -129,27 +129,15 @@ font-family: Arial, sans-serif;
     text-align: center;
 }
 @media (max-width:800px){
-    .nav__menu{
-        display: block;
-    }
+
     .nav__link.nav__links {
         color: #000; /* Cambia el color del texto del menú en dispositivos móviles */
     }
     .nav__link--menu{
-        position: fixed;
-        background-color: #000000;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        z-index: 100;
-        opacity: 0;
-        pointer-events: none;
-        transition: .7s opacity;
+        position: auto;
+        background-color: #7e7366;
+        display: auto;
+        font-size: 5px;
     }
     .nav__link--show{
         --show:block;
@@ -160,13 +148,6 @@ font-family: Arial, sans-serif;
     .nav__logo{
         width: 0;
         height: 0;
-    }
-    .nav__close{
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        width: 30px;
-        cursor: pointer;
     }
 }
 
