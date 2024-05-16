@@ -26,6 +26,7 @@ html {
         height: 400px;
         width: 400px;
     }
+    
 }
 
 body{
@@ -129,15 +130,20 @@ font-family: Arial, sans-serif;
     text-align: center;
 }
 @media (max-width:800px){
+    body{
+        width: auto;
+    }
 
     .nav__link.nav__links {
         color: #000; /* Cambia el color del texto del menú en dispositivos móviles */
+        
     }
     .nav__link--menu{
-        position: auto;
+        position:relative;
         background-color: #7e7366;
-        display: auto;
-        font-size: 5px;
+        display: flex;
+        font-size: 10%;
+
     }
     .nav__link--show{
         --show:block;
@@ -146,8 +152,8 @@ font-family: Arial, sans-serif;
 
     }
     .nav__logo{
-        width: 0;
-        height: 0;
+        display: none;
+
     }
 }
 
