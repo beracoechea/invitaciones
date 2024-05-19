@@ -160,6 +160,108 @@
         .confirmar:hover, .toggle-ubicacion:hover {
             background-color: #252525;
         }
+        .Galeria {
+                background-color: #817f7e; /* Sección Galería */
+                color: #fff; 
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+
+            .Galeria h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .panal {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-auto-rows: 180px; /* Altura del panal */
+                grid-gap: 10px;
+            }
+
+            .imagen {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: transform 0.3s ease-in-out;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            }
+
+            .imagen:hover {
+                transform: scale(1.3); /* Escala al hacer hover */
+            }
+            .confirmar, .toggle-ubicacion {
+            background-color: #000000; /* Botón Confirmar */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .confirmar:hover, .toggle-ubicacion:hover {
+            background-color: #6d4c41;
+        }
+        #panel {
+            display: none;
+            background-color: #000000; /* Cambiar el color de fondo a negro */
+            color: #fff; /* Texto en blanco */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto 0;
+        }
+        #panel label {
+            display: block;
+            margin-bottom: 10px;
+            color: #3E2723;
+            font-size: 16px;
+        }
+        #panel input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #3E2723;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        #panel button[type="submit"] {
+        background-color: #7c7c7c; /* Cambia el color de fondo a negro */
+        color: #fff; /* Cambia el color del texto a blanco */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    #panel button[type="submit"]:hover {
+        background-color: #6d4c41; /* Cambia el color de fondo al pasar el ratón por encima */
+    }
+        #contador {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+       
         </style>
 </head>
 <body>
@@ -215,10 +317,36 @@
             </div>
         </div>
     </section>
+
+    <section class="Galeria">
+        <h2>Galería de Fotos</h2>
+        <div class="panal">
+            <img src="Images/pareja.jpg" alt="Foto 1" class="imagen">
+            <img src="Images/pareja.jpg" alt="Foto 2" class="imagen">
+            <img src="Images/pareja.jpg" alt="Foto 3" class="imagen">
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+    </section>
+
     
 
+    <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
+    <div id="panel">
+        <form id="formulario" onsubmit="enviarDatos(event)">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <a href="https://docs.google.com/forms/d/1LWqlynwrZzg7ouLkFwNokQjFkXfIt-WDLT2ixd0UyoY/edit"><button class="confirmar">Trivia de los Novios</button></a>
 </header>
+
 <script>
+    
+    function mostrarPanel() {
+            document.getElementById('panel').style.display = 'block';
+        }
      function cuentaRegresiva() {
             var bodaFecha = new Date("Jul 20, 2024 00:00:00").getTime();
             var ahora = new Date().getTime();
