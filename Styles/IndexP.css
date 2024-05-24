@@ -2,7 +2,7 @@
 
 body {
     font-family: Poppins, sans-serif;
-    background-color: #000;
+    background-color: #ffffff;
     color: #eee;
     margin: 0;
     font-size: 12px;
@@ -374,14 +374,14 @@ header a {
     font-family: Arial, sans-serif;
     border-bottom: 2px solid #333;
     padding-bottom: 5px;
-    background-color: #fff; 
+    background-color: #c0bfbf; 
     color: #000; 
 }
 
 
 .Muestras-text {
     text-align: center;
-    color: #ffffff;
+    color: #000000;
     font-size: 18px;
     font-family: Arial, sans-serif;
     margin-top: 0;
@@ -389,64 +389,98 @@ header a {
     font-style: italic;
 }
 
-
-
-.Precios {
-    display: flex;
-    margin-top: 7%;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas si no caben en una sola línea */
-}
-
-.paquete {
-    text-align: center;
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
     padding: 20px;
-    border: 12px solid #2e2824;
-    border-radius: 100px;
-    background-color: #f9f9f9;
-    flex: 1 1 300px; /* Establece el ancho mínimo y máximo de cada paquete */
-    margin-bottom: 10px; /* Espacio entre los paquetes */
-    background-color: #2e2824;
+    margin-left: 5%;
+}
+.card {
+    
+    position: relative;
+    width: 90%;
+    height: 350px;
+    perspective: 1000px; /* Asegúrate de tener la perspectiva definida */
 }
 
-.paquete h2 {
-    margin-top: 0;
-    font-size: 24px;
-    color: #cac6c0;
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.5s;
 }
 
-.paquete p {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #cac6c0;
+.card .front {
+    transform: rotateY(0deg);
+    box-shadow: 0 5px 10px #000000;
 }
 
-.boton-comprar {
-    display: inline-block;
-    padding: 10px 20px;
+.card .front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
     color: #fff;
-    text-decoration: none;
-    border-radius: 100px;
-    transition: background-color 0.3s ease;
-    background-color: #7e7366;
-}
-
-.boton-comprar:hover {
-    background-color: #5e452a;
-}
-
-.leyenda-Precios {
+    background-color: rgba(184, 135, 11, 0.4);
     text-align: center;
-    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
-    font-size: 18px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #000;
 }
 
-.leyenda-Precios p {
-    margin: 0; /* Elimina el margen predeterminado del párrafo */
+.card .back {
+    transform: rotateY(180deg);
+    background: rgb(77, 77, 78);
+    padding: 15px;
+    color: #cac6c0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000000;
 }
+
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    color: #f3f3f3;
+}
+
+.card .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+}
+
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: rotateY(360deg);
+}
+
+.leyenda-Precios{
+    color: #000000;
+    text-align: center;
+}
+
 
 /* Estilos para la sección de Música */
 .Musica {
@@ -481,7 +515,7 @@ header a {
 
 /* Estilos para el pie de página */
 footer {
-    background-color: #12100e; 
+    background-color: #292624; 
     padding: 20px; 
     color: #fff; 
     text-align: center; 
