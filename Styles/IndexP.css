@@ -69,7 +69,7 @@ header a {
 .carousel .list .item .content .title,
 .carousel .list .item .content .topic {
     font-weight: bold;
-    font-size: 5em;
+    font-size: 4em;
     line-height: 1.3em;
 }
 
@@ -350,9 +350,18 @@ header a {
     width: 100%;
     scroll-snap-type: x mandatory;
     scrollbar-width: none; 
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
+    animation: scroll 40s linear infinite;
 }
 
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50px * 9));
+    }
+}
 .Muestras-carousel::-webkit-scrollbar {
     display: none;
 }
@@ -367,17 +376,16 @@ header a {
 
 .Muestras-title {
     text-align: center;
-    color: #333;
+    /* color: #333; */
     font-size: 32px;
     margin-top: 10%;
     text-transform: uppercase;
     font-family: Arial, sans-serif;
     border-bottom: 2px solid #333;
     padding-bottom: 5px;
-    background-color: #c0bfbf; 
-    color: #000; 
+    background-color: #000; 
+    color: #fff; 
 }
-
 
 .Muestras-text {
     text-align: center;
