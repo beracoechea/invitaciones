@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: Poppins, sans-serif;
+    background-color: #000;
+    color: #eee;
+    margin: 0;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    font-size: auto;
+    color: #000000;
+}
+
+header {
+    width: 1140px;
+    max-width: 80%;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+header a {
+    margin-right: 40px;
+}
+
+.carousel {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: -50px;
+    position: relative;
+}
+
+.carousel .list .item {
+    position: absolute;
+    inset: 0;
+}
+
+.carousel .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .list .item .content {
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+
+.carousel .list .item .content .author {
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+.carousel .list .item .content .title,
+.carousel .list .item .content .topic {
+    font-weight: bold;
+    font-size: 5em;
+    line-height: 1.3em;
+}
+
+.carousel .list .item .content .topic {
+    color: #b18c03;
+}
+
+.carousel .list .item .content .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.carousel .list .item .content .button {
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.carousel .list .item .content .button:nth-child(2) {
+    background-color: transparent;
+    color: #eee;
+    border: 1px solid #eee;
+}
+
+.thumbnail {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail .item {
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;   
+}
+
+.thumbnail .item .content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    color: #fff;
+}
+
+.thumbnail .item .content .title {
+    font-weight: bold;
+}
+
+.arrows {
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.arrows button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(179, 152, 5, 0.267);
+    border: none;
+    font-family: monospace;
+    color: #000000;
+    font-weight: bold;
+    font-size: large;
+    transition: .5s;
+    z-index: 100;
+}
+
+.arrows button:hover {
+    background-color: #eee;
+    color: #555;
+}
+
+.carousel .list .item:nth-child(1) {
+    z-index: 1;
+}
+
+.carousel .list .item .author,
+.carousel .list .item .title,
+.carousel .list .item .topic,
+.carousel .list .item .des,
+.carousel .list .item .buttons {
+    transform: translateY(50px);
+    opacity: 0;
+    filter: blur(20px);
+    animation: showContent 0.5s linear 1 forwards;
+}
+
+.carousel .list .item:nth-child(1) .author {
+    animation-delay: 1s;
+}
+
+.carousel .list .item:nth-child(1) .title {
+    animation-delay: 1.2s;
+}
+
+.carousel .list .item:nth-child(1) .topic {
+    animation-delay: 1.4s;
+}
+
+.carousel .list .item:nth-child(1) .des {
+    animation-delay: 1.6s;
+}
+
+.carousel .list .item:nth-child(1) .buttons {
+    animation-delay: 1.8s;
+}
+
+@keyframes showContent {
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.carousel.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    border-radius: 20px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+
+@keyframes showImage{
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1){
+    width: 0;
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+
+@keyframes showThumbnail {
+    to{
+        width: 150px;
+    }
+}
+
+.carousel.next .thumbnail{
+    transform: translateX(150px);
+    animation: transformThumbnail .5s linear 1 forwards;  
+}
+@keyframes transformThumbnail{
+    to{
+        transform: translateX(0);
+    }
+}
+
+.carousel.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+.carousel.prev .list .item:nth-child(2) img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outImage 0.5s linear 1 forwards;
+}
+
+@keyframes outImage{
+    to{
+        width: 150px;
+        height: 220px;
+        border-radius: 20px;
+        left:50%;
+        bottom: 50px;
+    }
+}
+.carousel.prev .thumbnail .item:nth-child(1){
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.carousel.prev .list .item:nth-child(2) .author,
+.carousel.prev .list .item:nth-child(2) .title,
+.carousel.prev .list .item:nth-child(2) .topic,
+.carousel.prev .list .item:nth-child(2) .des,
+.carousel.prev .list .item:nth-child(2) .buttons{
+    animation: contentOut 1.5s linear 1 forwards;
+}
+
+@keyframes contentOut{
+    to{
+        transform: translateY(150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+
+.time{
+    width: 0%;
+    height: 5px;
+    background-color: #000000;
+    ;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time{
+    width: 100%;
+    animation: timeRunning 2s linear 1 forwards;
+}
+
+@keyframes timeRunning{
+    to{
+        width: 0;
+    }
+}
+
+@media screen and (max-width:678px) {
+    .carousel .list .item .content{
+        padding-right: 0;
+    }
+    .carousel .list .item .content .title{
+        font-size: 30px;
+
+    }
+    
+}
+
+
+
+
+/* Styles for muestras */
+.Muestras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Muestras-carousel {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+.Muestras-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.Muestras-carousel img {
+    width: 350px; /* Ancho deseado */
+    height: 500px; /* Altura automática para mantener la proporción de aspecto */
+    flex-shrink: 0; /* Evita que las imágenes se contraigan si el espacio es insuficiente */
+    scroll-snap-align: start; /* Alinea las imágenes al inicio del contenedor */
+    margin-right: 20px; /* Espacio entre las imágenes */
+}
+
+.Muestras-title {
+    text-align: center;
+    color: #333;
+    font-size: 32px;
+    margin-top: 10%;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    background-color: #fff; 
+    color: #000; 
+}
+
+
+.Muestras-text {
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+
+
+.Precios {
+    display: flex;
+    margin-top: 7%;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas si no caben en una sola línea */
+}
+
+.paquete {
+    text-align: center;
+    padding: 20px;
+    border: 12px solid #2e2824;
+    border-radius: 100px;
+    background-color: #f9f9f9;
+    flex: 1 1 300px; /* Establece el ancho mínimo y máximo de cada paquete */
+    margin-bottom: 10px; /* Espacio entre los paquetes */
+    background-color: #2e2824;
+}
+
+.paquete h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #cac6c0;
+}
+
+.paquete p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #cac6c0;
+}
+
+.boton-comprar {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 100px;
+    transition: background-color 0.3s ease;
+    background-color: #7e7366;
+}
+
+.boton-comprar:hover {
+    background-color: #5e452a;
+}
+
+.leyenda-Precios {
+    text-align: center;
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000;
+}
+
+.leyenda-Precios p {
+    margin: 0; /* Elimina el margen predeterminado del párrafo */
+}
+
+/* Estilos para la sección de Música */
+.Musica {
+    background-color: #cac6c0; 
+    padding: 50px 0;
+    text-align: center; 
+}
+
+.Musica-container {
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 50px;
+}
+
+.Musica-title {
+    font-size: 28px; 
+    color: #2e2824;
+    margin-bottom: 20px; 
+}
+
+.Musica-text {
+    font-size: 18px; 
+    color: #2e2824; 
+    margin-bottom: 20px; 
+}
+
+.Musica-img {
+    width: 300px; 
+    height: auto; 
+    border-radius: 10% 10% 10% 10%;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #12100e; 
+    padding: 20px; 
+    color: #fff; 
+    text-align: center; 
+}
+
+.contacto {
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: 10px; 
+}
+
+.contacto-icono {
+    margin: 0 10px; 
+    filter: brightness(0) invert(1);
+}
+
+.contacto-icono img {
+    width: 40px; 
+    height: 40px;
+}
