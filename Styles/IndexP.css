@@ -69,7 +69,7 @@ header a {
 .carousel .list .item .content .title,
 .carousel .list .item .content .topic {
     font-weight: bold;
-    font-size: 5em;
+    font-size: 4em;
     line-height: 1.3em;
 }
 
@@ -150,10 +150,10 @@ header a {
 }
 
 .arrows button {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background-color: rgba(179, 152, 5, 0.267);
+    background-color: rgba(229, 255, 0, 0.267);
     border: none;
     font-family: monospace;
     color: #000000;
