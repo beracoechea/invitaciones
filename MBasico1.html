@@ -214,6 +214,15 @@
                 <button type="submit">Enviar</button>
             </form>
         </div>
+     
+        <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
+        <div id="panel" style="display: none;">
+            <form id="formulario" onsubmit="enviarDatos(event)">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     </header>
 
     <!-- Asegúrate de incluir la biblioteca SheetJS -->
@@ -238,30 +247,35 @@
         }
         //aqui esta la funcion del excel
         //Deben incluir la libreria que coloque en la linea 220
+ 
+        function mostrarPanel() {
+            document.getElementById('panel').style.display = 'block';
+        }
 
-         function enviarDatos(event) {
-        event.preventDefault(); // Evita que el formulario se envíe normalmente
+        function enviarDatos(event) {
+            event.preventDefault(); // Evita que el formulario se envíe normalmente
 
-        var nombre = document.getElementById('nombre').value;
+            var nombre = document.getElementById('nombre').value;
 
-        // Crear un objeto con los datos
-        var data = [{
-            Nombre: nombre,
-            Confirmación: 'Asistirá'
-        }];
-
-        // Convertir el objeto a una hoja de cálculo
-        var wb = XLSX.utils.book_new();
-        var ws = XLSX.utils.json_to_sheet(data);
-        XLSX.utils.book_append_sheet(wb, ws, "Asistencias");
-
-        // Guardar el archivo
-        var nombreArchivo = 'asistencias.xlsx';
-        XLSX.writeFile(wb, nombreArchivo);
-
-        // Ocultar el panel después de enviar los datos
-        document.getElementById('panel').style.display = 'none';
-    }
+            // Enviar los datos al servidor utilizando fetch
+            fetch('/generate-excel', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre: nombre })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Asistencia confirmada y guardada con éxito.');
+                } else {
+                    alert('Hubo un problema al guardar la asistencia.');
+                }
+                document.getElementById('panel').style.display = 'none';
+            })
+            .catch(error => console.error('Error:', error));
+        }
     </script>
 
 </body>
