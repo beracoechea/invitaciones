@@ -194,6 +194,9 @@
             </form>
         </div>
     </header>
+    <!-- Asegúrate de incluir la biblioteca SheetJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 
     <script>
         function mostrarPanel() {
@@ -212,6 +215,32 @@
             document.getElementById('panel').style.display = 'none';
             document.getElementById('trivia').style.display = 'none';
         }
+        //Funcion crear excel.
+
+        function enviarDatos(event) {
+        event.preventDefault();
+
+        var nombre = document.getElementById('nombre').value;
+
+        // Crear un objeto con los datos
+        var data = [{
+            Nombre: nombre,
+            Confirmación: 'Asistirá'
+        }];
+
+        // Convertir el objeto a una hoja de cálculo
+        var wb = XLSX.utils.book_new();
+        var ws = XLSX.utils.json_to_sheet(data);
+        XLSX.utils.book_append_sheet(wb, ws, "Asistencias");
+
+        // Guardar el archivo
+        var nombreArchivo = 'asistencias.xlsx';
+        XLSX.writeFile(wb, nombreArchivo);
+
+        // Ocultar el panel después de enviar los datos
+        document.getElementById('panel').style.display = 'none';
+        document.getElementById('trivia').style.display = 'none';
+    }
     </script>
 </body>
 </html>

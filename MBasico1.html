@@ -214,7 +214,19 @@
                 <button type="submit">Enviar</button>
             </form>
         </div>
+     
+        <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
+        <div id="panel" style="display: none;">
+            <form id="formulario" onsubmit="enviarDatos(event)">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     </header>
+
+    <!-- Asegúrate de incluir la biblioteca SheetJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
     <script>
         function mostrarPanel() {
@@ -232,6 +244,37 @@
     
             // Ocultar el panel después de enviar los datos
             document.getElementById('panel').style.display = 'none';
+        }
+        //aqui esta la funcion del excel
+        //Deben incluir la libreria que coloque en la linea 220
+ 
+        function mostrarPanel() {
+            document.getElementById('panel').style.display = 'block';
+        }
+
+        function enviarDatos(event) {
+            event.preventDefault(); // Evita que el formulario se envíe normalmente
+
+            var nombre = document.getElementById('nombre').value;
+
+            // Enviar los datos al servidor utilizando fetch
+            fetch('/generate-excel', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre: nombre })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Asistencia confirmada y guardada con éxito.');
+                } else {
+                    alert('Hubo un problema al guardar la asistencia.');
+                }
+                document.getElementById('panel').style.display = 'none';
+            })
+            .catch(error => console.error('Error:', error));
         }
     </script>
 

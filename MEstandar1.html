@@ -1,27 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitify</title>
-    <link rel="shortcut icon" href="./Images/DarkBack.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./Images/marca/DarkBack.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+       body {
+            background-color: #fbfada; /* Fondo */
+            margin: 0;
+            padding: 0;
+        }
         header {
-            max-width: 600px;
+            background: #12372a; /* Encabezado */
+            color: #fff; /* Texto */
+            max-width: 800px;
             margin: 20px auto;
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             text-align: center;
             position: relative;
         }
         .Nombres {
-            background-color: #6F250B; /* Tono beige */
+            background-color: #436850; /* Sección Nombres */
             color: #fff;
-            align-items: center;
             padding: 20px;
             border-radius: 10px;
             position: relative;
+        }
+        .Nombres h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 36px;
+        }
+        .Nombres h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 48px;
         }
         .pareja {
             border-radius: 50%;
@@ -31,7 +47,7 @@
         .frase {
             font-family: "Times New Roman", Times, serif;
             font-size: 24px;
-            color: #fff; /* Tono marrón oscuro */
+            color: #fff;
             margin-top: 20px;
             font-style: italic;
             text-align: center;
@@ -41,20 +57,20 @@
             bottom: 10px;
             right: 10px;
             font-size: 14px;
-            color: #fff; /* Tono marrón oscuro */
+            color: #fff;
         }
         .Vestimenta {
-            background-color: #bd9666; /* Tono beige claro */
-            margin: 20px;
-            align-items: center;
+            background-color: #adbc9f; /* Sección Vestimenta */
+            color: #fff; /* Texto */  
+            margin: 20px 0;
             padding: 20px;
             border-radius: 10px;
         }
         .Vestimenta h2 {
-            color: #fff; /* Tono marrón oscuro */
+            color: #fff;
         }
         .Vestimenta p {
-            color: #fff; /* Tono marrón oscuro */
+            color: #fff;
             font-style: italic;
         }
         .Vestimenta img {
@@ -63,52 +79,76 @@
             margin: 20px;
         }
         .Ubicaciones {
-            background-color: #FAC889; /* Tono beige claro */
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            background-color: #adbc9f; /* Sección Ubicaciones */
+            color: #fff; /* Texto */
             padding: 20px;
+            border-radius: 10px;
+        }
+        .Ubicacion {
+            display: flex;
             flex-wrap: wrap;
-            flex-direction: column;
-            border-radius: 10px;
-        }
-        .UbicacionT {
-            flex-basis: 45%;
             margin-bottom: 20px;
-            display: flex;
-            flex-direction: row;
-            margin-left: 0;
-            background-color: #915945; /* Tono beige medio */
+            background-color: #436850; /* Fondo Ubicación */
             border-radius: 10px;
-            align-items: center;
-            justify-content: space-around;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .UbicacionS {
-            flex-basis: 45%;
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: row;
-            margin-left: 0;
-            background-color: #915945; /* Mismo tono beige medio */
-            border-radius: 10px;
-            align-items: center;
-            justify-content: space-around;
+        .Ubicacion.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .CImg {
-            width: 35%;
-            border-radius: 40px 0 40px 0;
+            width: 40%;
+            height: auto;
+            border-radius: 10px;
             margin-bottom: 10px;
+            
         }
+            .Galeria {
+                background-color: #adbc9f; /* Sección Galería */
+                color: #fff; 
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+
+            .Galeria h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .panal {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-auto-rows: 180px; /* Altura del panal */
+                grid-gap: 10px;
+            }
+
+            .imagen {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: transform 0.3s ease-in-out;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            }
+
+            .imagen:hover {
+                transform: scale(1.3); /* Escala al hacer hover */
+            }
         .info {
-            margin: 0 10px;
-            color: #fff; /* Tono marrón oscuro */
+            flex: 1;
+            color: #fff;
             text-align: left;
-            font-family: Arial, sans-serif;
+            padding: 10px;
         }
         .info h3 {
             margin-top: 0;
-            color: #fff; /* Tono marrón oscuro */
-            font-family: Arial, sans-serif;
+            color: #fff;
+            font-family: 'Open Sans', sans-serif;
         }
         .info p {
             margin-bottom: 10px;
@@ -116,10 +156,11 @@
         }
         a {
             color: #fff;
+            text-decoration: underline;
         }
-        .confirmar {
-            background-color: #E47832; /* Tono marrón */
-            color: #FFFFFF; /* Blanco */
+        .confirmar, .toggle-ubicacion {
+            background-color: #07bc19; /* Botón Confirmar */
+            color: #fff;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -128,64 +169,84 @@
             transition: background-color 0.3s;
             margin-top: 20px;
         }
-        .confirmar:hover {
-            background-color: #6d4c41; /* Tono marrón más oscuro al pasar el ratón */
+        .confirmar:hover, .toggle-ubicacion:hover {
+            background-color: #6d4c41;
         }
-
         #panel {
             display: none;
-            background-color: #FAC889; /* Tono beige claro */
+            background-color: #adbc9f; /* Panel */
+            color: #fff; /* Texto */
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 20px auto 0;
         }
-
         #panel label {
             display: block;
             margin-bottom: 10px;
-            color: #3E2723; /* Tono marrón oscuro */
-            font-family: Arial, sans-serif;
+            color: #3E2723;
             font-size: 16px;
         }
-
         #panel input[type="text"] {
             width: calc(100% - 20px);
             padding: 10px;
-            border: 1px solid #3E2723; /* Tono marrón oscuro */
+            border: 1px solid #3E2723;
             border-radius: 5px;
             font-size: 16px;
             margin-bottom: 20px;
             box-sizing: border-box;
         }
-
         #panel button[type="submit"] {
-            background-color: #E47832; /* Tono marrón */
-            color: #FFFFFF; /* Blanco */
+            background-color: #04a23b;
+            color: #FFFFFF;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
         }
-
         #panel button[type="submit"]:hover {
-            background-color: #5D4037; /* Tono marrón más oscuro */
+            background-color: #5D4037;
+        }
+        #contador {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        /* Specific styles for the second location */
+        .Ubicacion:nth-child(2) {
+            flex-direction: row-reverse;
         }
     </style>
 </head>
 <body>
-    <header class="header">
+    <header class="header fade-in">
         <section class="Nombres">
-            <h2>Nuestra Boda</h2>
+            
+            <h2>Nuestra Boda 
+                <div class="tiempo-restante">
+                    <div id="contador"></div>
+                </div>
+            </h2>
             <h1>Jorge & Gabriela</h1>
-            <img class="pareja" src="Images/pareja.jpg">
+            <img class="pareja" src="Images/pareja.jpg" alt="Jorge y Gabriela">
             <p class="frase">"En cada latido, en cada suspiro, en cada mirada, hay un eco de nuestro amor que nos guía hacia este día mágico. ¡Ven y únete a nosotros mientras celebramos el comienzo de nuestra eternidad juntos!"</p>
             <div class="fecha">Fecha de la Boda: 20 de Julio, 2024</div>
         </section>
+
+        <div id="contador"></div>
 
         <section class="Vestimenta">
             <h2>Código de Vestimenta</h2>
@@ -195,7 +256,7 @@
         </section>
 
         <section class="Ubicaciones">
-            <div class="UbicacionT">
+            <div id="ubicacion-templo" class="Ubicacion">
                 <img class="CImg" src="Images/Templo.jpg" alt="Templo">
                 <div class="info">
                     <h3>Catedral de Guadalajara</h3>
@@ -205,18 +266,18 @@
                 </div>
             </div>
             
-            <div class="UbicacionS">   
+            <div id="ubicacion-lago" class="Ubicacion">   
+                <img class="CImg" src="Images/Evento.jpg" alt="Salón de Eventos">
                 <div class="info">
                     <h3>Lago del Rey</h3>
                     <p><strong>Ubicación:</strong> Av Ramón Corona #5243, 45201 Guadalajara, Jal.</p>
                     <p><strong>Horario:</strong> 7:00 PM - 1:00 AM</p>
                     <a href="https://maps.app.goo.gl/cP92VA2VDhX485DP6">Ver en el mapa</a>
                 </div>
-                <img class="CImg" src="Images/Evento.jpg" alt="Salón de Eventos">
             </div>
             
-            <div class="UbicacionT">
-                <img class="CImg" src="Images/Hotel.jpg" alt="Templo">
+            <div id="ubicacion-hotel" class="Ubicacion">
+                <img class="CImg" src="Images/Hotel.jpg" alt="Hotel">
                 <div class="info">
                     <h3>Hotel RIU</h3>
                     <p><strong>Ubicación:</strong> Av. Adolfo López Mateos Sur 830, Chapalita, 44500 Guadalajara, Jal.</p>
@@ -225,8 +286,18 @@
             </div>
         </section>
 
+        <section class="Galeria">
+            <h2>Galería de Fotos</h2>
+            <div class="panal">
+                <img src="Images/pareja.jpg" alt="Foto 1" class="imagen">
+                <img src="Images/pareja.jpg" alt="Foto 2" class="imagen">
+                <img src="Images/pareja.jpg" alt="Foto 3" class="imagen">
+                <!-- Agrega más imágenes según sea necesario -->
+            </div>
+        </section>
+
         <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
-        <div id="panel" style="display: none;">
+        <div id="panel">
             <form id="formulario" onsubmit="enviarDatos(event)">
                 <label for="nombre">Nombre Completo:</label>
                 <input type="text" id="nombre" name="nombre" required>
@@ -241,33 +312,93 @@
         function mostrarPanel() {
             document.getElementById('panel').style.display = 'block';
         }
-    
+
         function enviarDatos(event) {
             event.preventDefault(); // Evita que el formulario se envíe normalmente
-            
+    
             var nombre = document.getElementById('nombre').value;
+    
+            // Aquí enviarías los datos al servidor utilizando AJAX
+            // Por ejemplo, usando fetch o XMLHttpRequest
+            // Una vez que recibas una respuesta del servidor, podrías mostrar un mensaje de confirmación al usuario
+    
+            // Ocultar el panel después de enviar los datos
+            document.getElementById('panel').style.display = 'none';
+        }
+        //aqui esta la funcion del excel
+        //Deben incluir la libreria que coloque en la linea 220
 
-            // Enviar los datos al servidor utilizando AJAX
-            fetch('1VqoMn50azwJPzCqJUrtX_wCyzZvEAWna-XjchumwBuOQnt1A0TWBV2kr', {
-                method: 'POST',
-                body: JSON.stringify({nombre: nombre}),
-                headers:{
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log(data); // Mensaje de éxito del servidor
-                // Ocultar el panel después de enviar los datos
-                document.getElementById('panel').style.display = 'none';
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+         function enviarDatos(event) {
+        event.preventDefault(); // Evita que el formulario se envíe normalmente
+
+        var nombre = document.getElementById('nombre').value;
+
+        // Crear un objeto con los datos
+        var data = [{
+            Nombre: nombre,
+            Confirmación: 'Asistirá'
+        }];
+
+        // Convertir el objeto a una hoja de cálculo
+        var wb = XLSX.utils.book_new();
+        var ws = XLSX.utils.json_to_sheet(data);
+        XLSX.utils.book_append_sheet(wb, ws, "Asistencias");
+
+        // Guardar el archivo
+        var nombreArchivo = 'asistencias.xlsx';
+        XLSX.writeFile(wb, nombreArchivo);
+
+        // Ocultar el panel después de enviar los datos
+        document.getElementById('panel').style.display = 'none';
+    }
+    
+        // Función de cuenta regresiva
+        function cuentaRegresiva() {
+            var bodaFecha = new Date("Jul 20, 2024 00:00:00").getTime();
+            var ahora = new Date().getTime();
+            var distancia = bodaFecha - ahora;
+
+            var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            var segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("contador").innerHTML = "Faltan " + dias + "d " + horas + "h " + minutos + "m " + segundos + "s ";
+
+            if (distancia < 0) {
+                clearInterval(x);
+                document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
+            }
         }
 
-       
+        setInterval(cuentaRegresiva, 1000);
 
+        // Intersection Observer para animar las ubicaciones
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            const ubicaciones = document.querySelectorAll(".Ubicacion");
+            ubicaciones.forEach(ubicacion => {
+                observer.observe(ubicacion);
+            });
+        });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const imagenes = document.querySelectorAll(".imagen");
+    
+    imagenes.forEach(imagen => {
+        imagen.addEventListener("click", function() {
+            this.classList.toggle("ampliar");
+        });
+    });
+});
     </script>
 </body>
 </html>
