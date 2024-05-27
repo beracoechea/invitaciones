@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitify</title>
+    <link rel="shortcut icon" href="./Images/marca/DarkBack.png" type="image/x-icon">
+    <style>
+        header {
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            background-color: #fff; /* Tono en base a la tematica */
+        }
+        .Nombres {
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .Nombres h1 {
+            font-style: italic;
+            font-size: 35px;
+        }
+
+        .pareja {
+            border-radius: 20%;
+            height: 20%;
+            width: 30%;
+        }
+        .frase {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 24px;
+            margin-top: 20px;
+            font-style: italic;
+            text-align: center;
+            color: #000; /* Tono negro */
+        }
+        .fecha {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #000; /* Tono negro */
+        }
+        .Vestimenta {
+            margin: 20px;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f10195; /* Tono en base a la tematica */
+        }
+        .Vestimenta h2 {
+            color: #000; /* Tono negro */
+        }
+        .Vestimenta p {
+            color: #000; /* Tono negro */
+            font-style: italic;
+        }
+        .Vestimenta img {
+            height: 60px;
+            width: 60px;
+            margin: 20px;
+        }
+        .Ubicaciones {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            flex-wrap: wrap;
+            flex-direction: column;
+            border-radius: 10px;
+            background-color: #f10195; /* Tono en base a la tematica */
+        }
+        .UbicacionT, .UbicacionS {
+            flex-basis: 45%;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 0;
+            background-color: #fff; /* Tono beige medio */
+            border-radius: 10px;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .CImg {
+            width: 35%;
+            border-radius: 40px 0 40px 0;
+            margin-bottom: 10px;
+        }
+        .info {
+            margin: 0 10px;
+            color: #000; /* Tono negro */
+            text-align: left;
+            font-family: Arial, sans-serif;
+        }
+        .info h3 {
+            margin-top: 0;
+            color: #000; /* Tono negro */
+            font-family: Arial, sans-serif;
+        }
+        .info p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .confirmar {
+            background-color: #f10195; /* Tono en base a la tematica */
+            color: #FFFFFF; /* Blanco */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px; 
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .confirmar:hover {
+            background-color: #fd00d7; /* Tono en base a la tematica más oscuro al pasar el ratón */
+        }
+
+        #panel {
+            display: none;
+            background-color: #f10195; /* Tono en base a la tematica */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #panel label {
+            display: block;
+            margin-bottom: 10px;
+            color: #000; /* Tono negro */
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        #panel input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #000; /* Tono negro */
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        #panel button[type="submit"] {
+            background-color: #fff; /* Tono en base a la tematica */
+            color: #000; /* Blanco */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #panel button[type="submit"]:hover {
+            background-color: #fd00d7; /* Tono en base a la tematica más oscuro */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <section class="Nombres">
+            <h2>Mi Fiesta de Cumpleaños</h2>
+            <h1>Ximena</h1>
+            <img class="pareja" src="Images/Barbie.png">
+            <p class="frase">"¡Estás invitado a una fiesta mágica!🎉🎈
+                Ven a celebrar el cumpleaños de Ximena con nosotros. Habrá juegos, sorpresas y mucha diversión."</p>
+            <div class="fecha">Fecha de la Fiesta: 20 de Julio, 2024</div>
+        </section>
+
+        <section class="Vestimenta">
+            <h2>Tematica de la fiesta</h2>
+            <p>"Ximena a decidido que la fiesta sea con tematica de Barbie👸💃"</p>
+            <!-- <img src="Images/svg/traje.png" alt="Formal">
+            <img src="Images/svg/vestido.png" alt="Formal"> -->
+        </section>
+
+        <section class="Ubicaciones">
+            <!-- <div class="UbicacionT">
+                <img class="CImg" src="Images/Templo.jpg" alt="Templo">
+                <div class="info">
+                    <h3>Catedral de Guadalajara</h3>
+                    <p><strong>Ubicación:</strong> Av. Fray Antonio Alcalde 10, Zona Centro, 44100 Guadalajara, Jal.</p>
+                    <p><strong>Horario:</strong> 5:00 - 6:00 PM</p>
+                    <a href="https://maps.app.goo.gl/3YAx6EC36c9jFbjWA">Ver en el mapa</a>
+                </div>
+            </div> -->
+
+            <div class="UbicacionS">   
+                <div class="info">
+                    <h3>Lago del Rey</h3>
+                    <p><strong>Ubicación:</strong> Av Ramón Corona #5243, 45201 Guadalajara, Jal.</p>
+                    <p><strong>Horario:</strong> 4:00 PM - 9:00 PM</p>
+                    <a href="https://maps.app.goo.gl/cP92VA2VDhX485DP6">Ver en el mapa</a>
+                </div>
+                <img class="CImg" src="Images/Evento.jpg" alt="Salón de Eventos">
+            </div>
+        </section>
+
+        <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
+        <div id="panel" style="display: none;">
+            <form id="formulario" onsubmit="enviarDatos(event)">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+     
+        <!-- <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
+        <div id="panel" style="display: none;">
+            <form id="formulario" onsubmit="enviarDatos(event)">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div> -->
+    </header>
+
+    <!-- Asegúrate de incluir la biblioteca SheetJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <script>
+        function mostrarPanel() {
+            document.getElementById('panel').style.display = 'block';
+        }
+    
+        function enviarDatos(event) {
+            event.preventDefault(); // Evita que el formulario se envíe normalmente
+    
+            var nombre = document.getElementById('nombre').value;
+    
+            // Aquí enviarías los datos al servidor utilizando AJAX
+            // Por ejemplo, usando fetch o XMLHttpRequest
+            // Una vez que recibas una respuesta del servidor, podrías mostrar un mensaje de confirmación al usuario
+    
+            // Ocultar el panel después de enviar los datos
+            document.getElementById('panel').style.display = 'none';
+        }
+        //aqui esta la funcion del excel
+        //Deben incluir la libreria que coloque en la linea 220
+ 
+        function mostrarPanel() {
+            document.getElementById('panel').style.display = 'block';
+        }
+
+        function enviarDatos(event) {
+            event.preventDefault(); // Evita que el formulario se envíe normalmente
+
+            var nombre = document.getElementById('nombre').value;
+
+            // Enviar los datos al servidor utilizando fetch
+            fetch('/generate-excel', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre: nombre })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Asistencia confirmada y guardada con éxito.');
+                } else {
+                    alert('Hubo un problema al guardar la asistencia.');
+                }
+                document.getElementById('panel').style.display = 'none';
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+
+</body>
+</html>
