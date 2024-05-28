@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitify</title>
-    <link rel="shortcut icon" href="./Images/marca/DarkBack.png" type="image/x-icon">
+    <title>Invitación de Spider-Man</title>
     <style>
-        header {
+        body {
             max-width: 600px;
             margin: 20px auto;
             border-radius: 10px;
@@ -14,270 +13,166 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             position: relative;
-            background-color: #3c4fe3; /* Tono en base a la tematica */
+            background-color: #1d334b; /* Tono azul intenso */
+            color: #fff; /* Color de texto blanco */
         }
-        .Nombres {
-            align-items: center;
-            padding: 20px;
-            border-radius: 10px;
+        article {
             position: relative;
-        }
-        .Nombres h1 {
-            font-style: italic;
-            font-size: 35px;
-        }
-
-        .pareja {
-            border-radius: 20%;
-            height: 40%;
-            width: 50%;
-        }
-        .frase {
-            font-family: "Times New Roman", Times, serif;
-            font-size: 24px;
-            margin-top: 20px;
-            font-style: italic;
-            text-align: center;
-            color: #000; /* Tono negro */
-        }
-        .fecha {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 14px;
-            color: #000; /* Tono negro */
-        }
-        .Vestimenta {
-            margin: 20px;
-            align-items: center;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #c42f2f; /* Tono en base a la tematica */
-        }
-        .Vestimenta h2 {
-            color: #000; /* Tono negro */
-        }
-        .Vestimenta p {
-            color: #000; /* Tono negro */
-            font-style: italic;
-        }
-        .Vestimenta img {
-            height: 60px;
-            width: 60px;
-            margin: 20px;
-        }
-        .Ubicaciones {
             display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 20px;
-            flex-wrap: wrap;
             flex-direction: column;
-            border-radius: 10px;
-            background-color: #c42f2f; /* Tono en base a la tematica */
-        }
-        .UbicacionT, .UbicacionS {
-            flex-basis: 45%;
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: row;
-            margin-left: 0;
-            background-color: #fff; /* Tono beige medio */
-            border-radius: 10px;
             align-items: center;
-            justify-content: space-around;
+            width: 300px; /* Ancho del contenedor del artículo */
+            height: 400px; /* Altura del contenedor del artículo */
+            transition: all .3s ease;
+            margin: auto;
+            margin-bottom: 20px; /* Espacio entre artículos */
         }
-        .CImg {
-            width: 35%;
-            border-radius: 40px 0 40px 0;
-            margin-bottom: 10px;
+        article img:first-child {
+            box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
+            border-radius: 4px;
+            object-fit: cover;
+            width: 100%;
+            height: 100%; /* Ajustar el tamaño de la imagen */
+            margin-bottom: 10px; /* Agregado: Separación entre imagen y texto */
         }
-        .info {
-            margin: 0 10px;
-            color: #000; /* Tono negro */
-            text-align: left;
-            font-family: Arial, sans-serif;
-        }
-        .info h3 {
-            margin-top: 0;
-            color: #000; /* Tono negro */
-            font-family: Arial, sans-serif;
-        }
-        .info p {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-        .confirmar {
-            background-color: #c42f2f; /* Tono en base a la tematica */
-            color: #FFFFFF; /* Blanco */
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px; 
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 20px;
-        }
-        .confirmar:hover {
-            background-color: #9e1818; /* Tono en base a la tematica más oscuro al pasar el ratón */
-        }
-
-        #panel {
-            display: none;
-            background-color: #c42f2f; /* Tono en base a la tematica */
+        article div {
+            color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
+            width: 88%; /* Ancho del div en pantallas grandes */
+            transition: .3s ease;
+            opacity: 0; /* Comienza oculto */
+            height: 70%; /* Altura igual a la imagen */
+            overflow: hidden; /* Ocultar el contenido que desborda */
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+            border-radius: 0 0 4px 4px; /* Bordes redondeados solo en la parte inferior */
         }
-
-        #panel label {
-            display: block;
-            margin-bottom: 10px;
-            color: #000; /* Tono negro */
-            font-family: Arial, sans-serif;
-            font-size: 16px;
+        article div h2 {
+            margin-bottom: 10px; /* Espacio inferior */
+            font-size: 1.5em; /* Tamaño de fuente */
         }
-
-        #panel input[type="text"] {
-            width: calc(100% - 20px);
-            padding: 10px;
-            border: 1px solid #000; /* Tono negro */
-            border-radius: 5px;
-            font-size: 16px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
+        article div p {
+            margin-bottom: 8px; /* Espacio inferior */
+            font-size: 1em; /* Tamaño de fuente */
         }
-
-        #panel button[type="submit"] {
-            background-color: #3c4fe3; /* Tono en base a la tematica */
-            color: #FFFFFF; /* Blanco */
+        article div a.button {
+            display: inline-block;
             padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
+            background-color: #4CAF50; /* Verde */
+            color: white;
+            text-align: center;
+            text-decoration: none;
             font-size: 16px;
             cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+        article div a.button:hover {
+            background-color: #45a049; /* Verde más oscuro al pasar el ratón */
+        }
+        article img:last-child {
+            position: absolute;
+            width: 200px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transform: translateY(25%);
+            transition: .3s ease;
+            opacity: 0;
         }
 
-        #panel button[type="submit"]:hover {
-            background-color: #122298; /* Tono en base a la tematica más oscuro */
+        article:hover {
+            transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
         }
+        article::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(
+                to bottom,
+                transparent 10%, rgba(0,0,0,0.5) 505,
+                rgba(0,0,0)95%
+            );
+            opacity: 0;
+            transition: all .3s ease;
+        }
+        article:hover::before {
+            opacity: 1;
+        }
+        article:hover img:last-child,
+        article:hover div {
+            opacity: 1; /* Mostrar */
+        }
+        article:hover img:last-child {
+            opacity: 1;
+            transform: translateY(10%);
+        }
+
+        @media only screen and (min-width: 500px) {
+            article {
+                flex-direction: row;
+                align-items: center;
+            }
+            article div {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                height: 70%;
+                width: 88%; /* Ancho del div en pantallas grandes */
+                opacity: 0; /* Comienza oculto */
+                transition: .3s ease;
+                padding: 20px;
+            }
+        }
+
+        .buttons {
+            margin-top: 60px;
+        }
+        .buttons a {
+            display: inline-block;
+            padding: 10px 20px  ;
+            background-color: #4CAF50; /* Verde */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin: 25px;
+        }
+        .buttons a:hover {
+            background-color: #45a049; /* Verde más oscuro al pasar el ratón */
+        }
+        
     </style>
 </head>
 <body>
-    <header class="header">
-        <section class="Nombres">
-            <h2>Mi Fiesta de Cumpleaños</h2>
-            <h1>Kevin</h1>
-            <img class="pareja" src="Images/Spiderman.png">
-            <p class="frase">"¡Estás invitado a una fiesta mágica!🎉🎈
-                Ven a celebrar el cumpleaños de Kevin con nosotros. Habrá juegos, sorpresas y mucha diversión."</p>
-            <div class="fecha">Fecha de la Fiesta: 20 de Julio, 2024</div>
-        </section>
-
-        <section class="Vestimenta">
-            <h2>Tematica de la fiesta</h2>
-            <p>"Kevin a decidido que la fiesta sea con tematica de Spider-man🕷️🕸️"</p>
-            <!-- <img src="Images/svg/traje.png" alt="Formal">
-            <img src="Images/svg/vestido.png" alt="Formal"> -->
-        </section>
-
-        <section class="Ubicaciones">
-            <!-- <div class="UbicacionT">
-                <img class="CImg" src="Images/Templo.jpg" alt="Templo">
-                <div class="info">
-                    <h3>Catedral de Guadalajara</h3>
-                    <p><strong>Ubicación:</strong> Av. Fray Antonio Alcalde 10, Zona Centro, 44100 Guadalajara, Jal.</p>
-                    <p><strong>Horario:</strong> 5:00 - 6:00 PM</p>
-                    <a href="https://maps.app.goo.gl/3YAx6EC36c9jFbjWA">Ver en el mapa</a>
-                </div>
-            </div> -->
-
-            <div class="UbicacionS">   
-                <div class="info">
-                    <h3>Lago del Rey</h3>
-                    <p><strong>Ubicación:</strong> Av Ramón Corona #5243, 45201 Guadalajara, Jal.</p>
-                    <p><strong>Horario:</strong> 4:00 PM - 9:00 PM</p>
-                    <a href="https://maps.app.goo.gl/cP92VA2VDhX485DP6">Ver en el mapa</a>
-                </div>
-                <img class="CImg" src="Images/Evento.jpg" alt="Salón de Eventos">
-            </div>
-        </section>
-
-        <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
-        <div id="panel" style="display: none;">
-            <form id="formulario" onsubmit="enviarDatos(event)">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <button type="submit">Enviar</button>
-            </form>
+    <article>
+        <img src="./Images/Infantiles/SpiderPortada.webp">
+        <div>
+            <h2>¡Spiderman te invita a su fiesta de cumpleaños!</h2>
+            <p><strong>Nombre del cumpleañero:</strong> Peter Parker</p>
+            <p><strong>Fecha:</strong> Sábado, 15 de junio de 2024</p>
         </div>
-     
-        <!-- <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
-        <div id="panel" style="display: none;">
-            <form id="formulario" onsubmit="enviarDatos(event)">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <button type="submit">Enviar</button>
-            </form>
-        </div> -->
-    </header>
+        <img src="./Images/Infantiles/Spiderman.png">
+    </article>
+   
 
-    <!-- Asegúrate de incluir la biblioteca SheetJS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-
-    <script>
-        function mostrarPanel() {
-            document.getElementById('panel').style.display = 'block';
-        }
-    
-        function enviarDatos(event) {
-            event.preventDefault(); // Evita que el formulario se envíe normalmente
-    
-            var nombre = document.getElementById('nombre').value;
-    
-            // Aquí enviarías los datos al servidor utilizando AJAX
-            // Por ejemplo, usando fetch o XMLHttpRequest
-            // Una vez que recibas una respuesta del servidor, podrías mostrar un mensaje de confirmación al usuario
-    
-            // Ocultar el panel después de enviar los datos
-            document.getElementById('panel').style.display = 'none';
-        }
-        //aqui esta la funcion del excel
-        //Deben incluir la libreria que coloque en la linea 220
- 
-        function mostrarPanel() {
-            document.getElementById('panel').style.display = 'block';
-        }
-
-        function enviarDatos(event) {
-            event.preventDefault(); // Evita que el formulario se envíe normalmente
-
-            var nombre = document.getElementById('nombre').value;
-
-            // Enviar los datos al servidor utilizando fetch
-            fetch('/generate-excel', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ nombre: nombre })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Asistencia confirmada y guardada con éxito.');
-                } else {
-                    alert('Hubo un problema al guardar la asistencia.');
-                }
-                document.getElementById('panel').style.display = 'none';
-            })
-            .catch(error => console.error('Error:', error));
-        }
-    </script>
-
+    <section class="buttons">
+        <a href="#"><strong>Lista de regalos</strong></a>
+        <a href="https://www.google.com/maps/place/Oscorp+Tower,+Nueva+York" target="_blank"><strong>Ver Ubicación</strong></a>
+    </section>
 </body>
 </html>

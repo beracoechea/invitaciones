@@ -333,65 +333,80 @@ header a {
     }
     
 }
-
-/* Styles for muestras */
-.Muestras {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.des {
+    font-size: 16px; /* Tamaño de fuente aumentado */
+    color: #ffffff; /* Color más llamativo */
+    font-weight: bold; /* Fuente más gruesa */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para dar más contraste */
+    border: 2px solid transparent; /* Borde del mismo color para destacar más */
+    padding: 5px; /* Espacio adicional alrededor del texto */
+    position: relative; /* Posición relativa para poder posicionar el overlay */
+    display: inline-block; /* Mostrar como bloque en línea */
 }
 
-.Muestras-carousel {
-    display: flex;
-    overflow-x: auto;
+/* Agregar overlay */
+.des::after {
+    content: ""; /* Contenido del pseudo-elemento */
+    position: absolute; /* Posición absoluta en relación al padre */
+    top: 0;
+    left: 0;
     width: 100%;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; 
-    -ms-overflow-style: none;
-    animation: scroll 40s linear infinite;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Color del overlay (blanco con transparencia) */
+    z-index: 1; /* Asegurar que el overlay esté por encima del texto */
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50px * 9));
-    }
+
+/* Estilos para la sección de Muestras */
+.Muestras {
+    background-color: transparent; /* Cambiar el color de fondo a transparente */
+    padding: 50px 0; /* Añadir espacio alrededor del contenido */
+    overflow-x: auto; /* Permitir el desplazamiento horizontal */
+    white-space: nowrap; /* Evitar que las imágenes se envuelvan */
+    scrollbar-width: none; /* Ocultar la barra de desplazamiento en Firefox */
+    -ms-overflow-style: none; /* Ocultar la barra de desplazamiento en IE y Edge */
 }
-.Muestras-carousel::-webkit-scrollbar {
+
+/* Ocultar la barra de desplazamiento en navegadores webkit */
+.Muestras::-webkit-scrollbar {
     display: none;
 }
 
-.Muestras-carousel img {
-    width: 350px; /* Ancho deseado */
-    height: 500px; /* Altura automática para mantener la proporción de aspecto */
-    flex-shrink: 0; /* Evita que las imágenes se contraigan si el espacio es insuficiente */
-    scroll-snap-align: start; /* Alinea las imágenes al inicio del contenedor */
+/* Estilo para cada imagen en el slider */
+.Muestras img {
+    width: 300px;
+    height: auto;
     margin-right: 20px; /* Espacio entre las imágenes */
 }
 
 .Muestras-title {
-    text-align: center;
-    /* color: #333; */
     font-size: 32px;
-    margin-top: 10%;
+    text-align: center;
+
+    color: #333; /* Color de texto original */
+    margin-top: 10%; /* Ajustar el espacio superior */
     text-transform: uppercase;
-    font-family: Arial, sans-serif;
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
-    background-color: #000; 
-    color: #fff; 
+    border-bottom: 2px solid #333; /* Color del borde original */
+    padding-bottom: 5px; /* Ajustar el espacio inferior */
+    background-color: #000; /* Color de fondo original */
+    color: #fff; /* Color de texto original */
 }
 
 .Muestras-text {
     text-align: center;
-    color: #000000;
+    color: #000000; /* Color de texto original */
     font-size: 18px;
-    font-family: Arial, sans-serif;
     margin-top: 0;
     margin-bottom: 20px;
     font-style: italic;
+}
+
+.Muestras-carousel img {
+    width: 300px;
+    height: 400px; 
+    margin-right: 2%; 
+    margin-left: 2%; 
+
 }
 
 .tarjetas {
