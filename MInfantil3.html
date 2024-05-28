@@ -3,36 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitify</title>
-    <link rel="shortcut icon" href="./Images/marca/DarkBack.png" type="image/x-icon">
-
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <title>Invitación de Batman</title>
     <style>
-        .Infantil {
-            max-width: 250px;
+        body {
+            max-width: 600px;
             margin: 20px auto;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: rgb(194, 88, 171);
+            background-color: rgb(255, 255, 255);
             text-align: center;
             position: relative;
+            background-color: #5d275d; /* Tono azul intenso */
+            color: #fff; /* Color de texto blanco */
         }
-
         article {
             position: relative;
-            width: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px; /* Ancho del contenedor del artículo */
+            height: 400px; /* Altura del contenedor del artículo */
             transition: all .3s ease;
+            margin: auto;
+            margin-bottom: 20px; /* Espacio entre artículos */
         }
-
         article img:first-child {
             box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
             border-radius: 4px;
             object-fit: cover;
             width: 100%;
+            height: 100%; /* Ajustar el tamaño de la imagen */
+            margin-bottom: 10px; /* Agregado: Separación entre imagen y texto */
         }
-
+        article div {
+            color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            width: 88%; /* Ancho del div en pantallas grandes */
+            transition: .3s ease;
+            opacity: 0; /* Comienza oculto */
+            height: 70%; /* Altura igual a la imagen */
+            overflow: hidden; /* Ocultar el contenido que desborda */
+            background-color: rgba(0, 0, 0, 0.142); /* Fondo oscuro */
+            border-radius: 0 0 4px 4px; /* Bordes redondeados solo en la parte inferior */
+        }
+        article div h2 {
+            margin-bottom: 10px; /* Espacio inferior */
+            font-size: 1.5em; /* Tamaño de fuente */
+        }
+        article div p {
+            margin-bottom: 8px; /* Espacio inferior */
+            font-size: 1em; /* Tamaño de fuente */
+        }
+        article div a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Verde */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+        article div a.button:hover {
+            background-color: #45a049; /* Verde más oscuro al pasar el ratón */
+        }
         article img:last-child {
             position: absolute;
             width: 200px;
@@ -46,46 +91,89 @@
         }
 
         article:hover {
-            transform: perspective(250px)
-            rotateX(10deg)
-            translateY(-5%)
-            translateZ(0);
+            transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
         }
-
         article::before {
             content: '';
             position: absolute;
             bottom: 0;
             height: 100%;
             width: 100%;
-            background-image: 
-            linear-gradient(
+            background-image: linear-gradient(
                 to bottom,
-                transparent 10%,
-                rgba(0, 0, 0, 0.5) 50%,
-                rgba(0, 0, 0) 95%
+                transparent 10%, rgba(0,0,0,0.5) 505,
+                rgba(0,0,0)95%
             );
             opacity: 0;
             transition: all .3s ease;
         }
-
         article:hover::before {
             opacity: 1;
         }
-
+        article:hover img:last-child,
+        article:hover div {
+            opacity: 1; /* Mostrar */
+        }
         article:hover img:last-child {
             opacity: 1;
             transform: translateY(10%);
         }
+
+        @media only screen and (min-width: 500px) {
+            article {
+                flex-direction: row;
+                align-items: center;
+            }
+            article div {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                height: 70%;
+                width: 88%; /* Ancho del div en pantallas grandes */
+                opacity: 0; /* Comienza oculto */
+                transition: .3s ease;
+                padding: 20px;
+            }
+        }
+
+        .buttons {
+            margin-top: 60px;
+        }
+        .buttons a {
+            display: inline-block;
+            padding: 10px 20px  ;
+            background-color: #4CAF50; /* Verde */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin: 25px;
+        }
+        .buttons a:hover {
+            background-color: #45a049; /* Verde más oscuro al pasar el ratón */
+        }
+        
     </style>
 </head>
 <body>
-    <div class="Infantil">
-        <article>
-            <img src="./Images/Infantiles/FondoBatman.jpg" alt="">
-            <img src="./Images/Infantiles/Batman.png" alt="">
-        </article>
-    </div>
+    <article>
+        <img src="./Images/Infantiles/FondoBatman.jpg">
+        <div>
+            <h2>¡Bat-man te invita a su fiesta de cumpleaños!</h2>
+            <p><strong>Nombre del cumpleañero:</strong> Bruce Wayne</p>
+            <p><strong>Fecha:</strong> Sábado, 15 de junio de 2024</p>
+        </div>
+        <img src="./Images/Infantiles/Batman.png">
+    </article>
+   
 
+    <section class="buttons">
+        <a href="#"><strong>Lista de regalos</strong></a>
+        <a href="https://www.google.com/maps/place/Oscorp+Tower,+Nueva+York" target="_blank"><strong>Ver Ubicación</strong></a>
+    </section>
 </body>
 </html>
