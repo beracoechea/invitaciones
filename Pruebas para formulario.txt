@@ -1,0 +1,93 @@
+Posibles soluciones a confirmacion de asistencia.
+
+Método 1: Google Sheets
+
+Ve a Google Forms.
+Crea un nuevo formulario con los campos necesarios, como Nombre, ¿Asistirá? (Sí/No), Email, etc.
+En la configuración del formulario, selecciona que las respuestas se almacenen en una nueva hoja de cálculo de Google Sheets.
+Incorporar el Formulario en tu Página:
+
+Obtén el enlace del formulario y colócalo en tu página web.
+O bien, puedes incrustar el formulario directamente en tu página usando un <iframe>. Aquí tienes un ejemplo de cómo hacerlo:
+html
+Copiar código
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdX9YXQfO_Xd...formResponse" w
+
+Método 2: Base de Datos y Backend
+Este método es más avanzado y flexible, pero requiere conocimientos básicos de programación web y bases de datos.
+
+Pasos:
+Configuración del Servidor y Base de Datos:
+
+Configura un servidor web con un lenguaje de backend como Node.js, PHP, Python, etc.
+Configura una base de datos (como MySQL, PostgreSQL, o MongoDB) para almacenar las confirmaciones de asistencia.
+Crear API para Recibir Datos:
+
+Crea una API en tu servidor para recibir las confirmaciones de asistencia y almacenarlas en la base de datos.
+Aquí tienes un ejemplo básico usando Node.js y Express:
+javascript
+Copiar código
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+const app = express();
+app.use(bodyParser.json());
+
+mongoose.connect('mongodb://localhost:27017/invitations', { useNewUrlParser: true, useUnifiedTopology: true });
+
+const attendanceSchema = new mongoose.Schema({
+  nombre: String,
+  asistencia: String
+});
+
+const Attendance = mongoose.model('Attendance', attendanceSchema);
+
+app.post('/confirm', async (req, res) => {
+  const attendance = new Attendance({
+    nombre: req.body.nombre,
+    asistencia: req.body.asistencia
+  });
+  await attendance.save();
+  res.send('Confirmación recibida');
+});
+
+app.listen(3000, () => {
+  console.log('Servidor escuchando en el puerto 3000');
+});
+Incorporar el Formulario en tu Página:
+
+Modifica el formulario en tu página web para enviar los datos a tu API. Aquí tienes un ejemplo:
+html
+Copiar código
+<form id="formulario" onsubmit="enviarDatos(event)">
+  <label for="nombre">Nombre Completo:</label>
+  <input type="text" id="nombre" name="nombre" required>
+  <label for="asistencia">¿Asistirá?</label>
+  <select id="asistencia" name="asistencia" required>
+    <option value="Sí">Sí</option>
+    <option value="No">No</option>
+  </select>
+  <button type="submit">Enviar</button>
+</form>
+
+<script>
+  function enviarDatos(event) {
+    event.preventDefault();
+    var nombre = document.getElementById('nombre').value;
+    var asistencia = document.getElementById('asistencia').value;
+
+    fetch('/confirm', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ nombre, asistencia })
+    })
+    .then(response => response.text())
+    .then(data => {
+      alert(data);
+      document.getElementById('formulario').reset();
+    });
+  }
+</script>
