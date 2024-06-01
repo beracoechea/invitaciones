@@ -417,7 +417,6 @@ header a {
     margin-left: 5%;
 }
 .card {
-    
     position: relative;
     width: 90%;
     height: 350px;
@@ -486,6 +485,7 @@ header a {
 
 .card .back p {
     letter-spacing: 1px;
+    margin-top: 0%;
 }
 
 .card:hover .front {
