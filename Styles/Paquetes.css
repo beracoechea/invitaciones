@@ -49,3 +49,33 @@
     margin-top: 20px;
 }
 
+/* Estilos para el ScrollView horizontal */
+.scroll-view {
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    white-space: nowrap; /* Evita el retorno de línea */
+    -webkit-overflow-scrolling: touch; /* Proporciona un desplazamiento suave en dispositivos táctiles */
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* Estilo del desplazamiento en Internet Explorer */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    justify-content: flex-start; /* Alinea el contenido a la izquierda por defecto */
+}
+
+.scroll-view-container {
+    display: inline-block; /* Mantiene las imágenes en una línea */
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.scroll-view-container a {
+    display: inline-block; /* Mantiene cada imagen en línea */
+    margin-right: 10px; /* Espacio entre las imágenes */
+}
+
+.scroll-view-container a img {
+    width: 200px; /* Ancho fijo para las imágenes */
+    height: 200px; /* Altura ajustada automáticamente para mantener la proporción */
+}
+
+@media screen and (min-width: 768px) {
+    .scroll-view {
+        justify-content: center; /* Centra el contenido horizontalmente solo en pantallas grandes */
+    }
+}

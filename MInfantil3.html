@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +11,10 @@
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: rgb(255, 255, 255);
+            background-color: #1C1C1C; /* Fondo negro */
+            color: #FFD700; /* Color de texto amarillo */
             text-align: center;
             position: relative;
-            background-color: #5d275d; /* Tono azul intenso */
-            color: #fff; /* Color de texto blanco */
         }
         article {
             position: relative;
@@ -33,15 +32,15 @@
             border-radius: 4px;
             object-fit: cover;
             width: 100%;
-            height: 100%; /* Ajustar el tamaño de la imagen */
+            height: 80%; /* Ajustar el tamaño de la imagen */
             margin-bottom: 10px; /* Agregado: Separación entre imagen y texto */
         }
         article div {
-            color: #fff;
+            color: #FFD700; /* Color de texto amarillo */
             position: absolute;
-            top: 0;
+            top: 10%;
             right: 0;
-            bottom: 0;
+            bottom: 20%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -49,9 +48,9 @@
             width: 88%; /* Ancho del div en pantallas grandes */
             transition: .3s ease;
             opacity: 0; /* Comienza oculto */
-            height: 70%; /* Altura igual a la imagen */
+            height: 60%; /* Altura del contenedor de texto */
             overflow: hidden; /* Ocultar el contenido que desborda */
-            background-color: rgba(0, 0, 0, 0.142); /* Fondo oscuro */
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
             border-radius: 0 0 4px 4px; /* Bordes redondeados solo en la parte inferior */
         }
         article div h2 {
@@ -65,8 +64,8 @@
         article div a.button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #4CAF50; /* Verde */
-            color: white;
+            background-color: #FFD700; /* Amarillo */
+            color: black;
             text-align: center;
             text-decoration: none;
             font-size: 16px;
@@ -76,12 +75,12 @@
             margin-right: 10px;
         }
         article div a.button:hover {
-            background-color: #45a049; /* Verde más oscuro al pasar el ratón */
+            background-color: #FFC107; /* Amarillo más oscuro al pasar el ratón */
         }
         article img:last-child {
             position: absolute;
             width: 200px;
-            bottom: 0;
+            bottom: -10px;
             left: 0;
             right: 0;
             margin: auto;
@@ -101,8 +100,8 @@
             width: 100%;
             background-image: linear-gradient(
                 to bottom,
-                transparent 10%, rgba(0,0,0,0.5) 505,
-                rgba(0,0,0)95%
+                transparent 10%, rgba(0,0,0,0.5) 50%,
+                rgba(0,0,0) 95%
             );
             opacity: 0;
             transition: all .3s ease;
@@ -142,9 +141,9 @@
         }
         .buttons a {
             display: inline-block;
-            padding: 10px 20px  ;
-            background-color: #4CAF50; /* Verde */
-            color: white;
+            padding: 10px 20px;
+            background-color: #FFD700; /* Amarillo */
+            color: black;
             text-align: center;
             text-decoration: none;
             font-size: 16px;
@@ -154,22 +153,20 @@
             margin: 25px;
         }
         .buttons a:hover {
-            background-color: #45a049; /* Verde más oscuro al pasar el ratón */
+            background-color: #FFC107; /* Amarillo más oscuro al pasar el ratón */
         }
-        
     </style>
 </head>
 <body>
     <article>
         <img src="./Images/Infantiles/FondoBatman.jpg">
         <div>
-            <h2>¡Bat-man te invita a su fiesta de cumpleaños!</h2>
-            <p><strong>Nombre del cumpleañero:</strong> Bruce Wayne</p>
+            <h2>¡Batman te invita a su fiesta de cumpleaños!</h2>
+            <p><strong>Cumpleañero:</strong> Bruce Wayne</p>
             <p><strong>Fecha:</strong> Sábado, 15 de junio de 2024</p>
         </div>
         <img src="./Images/Infantiles/Batman.png">
     </article>
-   
 
     <section class="buttons">
         <a href="#"><strong>Lista de regalos</strong></a>

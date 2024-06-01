@@ -11,10 +11,9 @@
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: rgb(255, 255, 255);
             text-align: center;
             position: relative;
-            background-color: #ff03cd; /* Tono azul intenso */
+            background-color: #ff69b4; /* Rosa Barbie */
             color: #fff; /* Color de texto blanco */
         }
         article {
@@ -23,7 +22,7 @@
             flex-direction: column;
             align-items: center;
             width: 300px; /* Ancho del contenedor del artículo */
-            height: 400px; /* Altura del contenedor del artículo */
+            height: 450px; /* Ajustar altura del contenedor del artículo */
             transition: all .3s ease;
             margin: auto;
             margin-bottom: 20px; /* Espacio entre artículos */
@@ -34,14 +33,14 @@
             object-fit: cover;
             width: 100%;
             height: 100%; /* Ajustar el tamaño de la imagen */
-            margin-bottom: 10px; /* Agregado: Separación entre imagen y texto */
+            margin-bottom: 10px; /* Separación entre imagen y texto */
         }
         article div {
-            color: #000;
+            color: #fff;
             position: absolute;
-            top: 0;
+            top: 10%; /* Subir el texto */
             right: 0;
-            bottom: 0;
+            left: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -49,9 +48,9 @@
             width: 88%; /* Ancho del div en pantallas grandes */
             transition: .3s ease;
             opacity: 0; /* Comienza oculto */
-            height: 70%; /* Altura igual a la imagen */
+            height: auto; /* Altura automática para ajustar el texto */
             overflow: hidden; /* Ocultar el contenido que desborda */
-            background-color: rgba(0, 0, 0, 0); /* Fondo oscuro */
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
             border-radius: 0 0 4px 4px; /* Bordes redondeados solo en la parte inferior */
         }
         article div h2 {
@@ -65,7 +64,7 @@
         article div a.button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #4CAF50; /* Verde */
+            background-color: #ff69b4; /* Rosa Barbie */
             color: white;
             text-align: center;
             text-decoration: none;
@@ -76,16 +75,16 @@
             margin-right: 10px;
         }
         article div a.button:hover {
-            background-color: #45a049; /* Verde más oscuro al pasar el ratón */
+            background-color: #ff4da6; /* Rosa más oscuro al pasar el ratón */
         }
         article img:last-child {
             position: absolute;
-            width: 200px;
-            bottom: 0;
+            width: 140px; /* Tamaño ajustado */
+            bottom: 10px; /* Bajar un poco */
             left: 0;
             right: 0;
             margin: auto;
-            transform: translateY(25%);
+            transform: translateY(20%); /* Ajustar */
             transition: .3s ease;
             opacity: 0;
         }
@@ -101,8 +100,8 @@
             width: 100%;
             background-image: linear-gradient(
                 to bottom,
-                transparent 10%, rgba(0,0,0,0.5) 505,
-                rgba(0,0,0)95%
+                transparent 10%, rgba(0,0,0,0.5) 50%,
+                rgba(0,0,0,0.7) 95%
             );
             opacity: 0;
             transition: all .3s ease;
@@ -116,7 +115,7 @@
         }
         article:hover img:last-child {
             opacity: 1;
-            transform: translateY(10%);
+            transform: translateY(0%); /* Ajustar */
         }
 
         @media only screen and (min-width: 500px) {
@@ -126,10 +125,10 @@
             }
             article div {
                 position: absolute;
-                top: 0;
+                top: 10%; /* Subir el texto */
                 right: 0;
-                bottom: 0;
-                height: 70%;
+                left: 0;
+                height: auto; /* Altura automática para ajustar el texto */
                 width: 88%; /* Ancho del div en pantallas grandes */
                 opacity: 0; /* Comienza oculto */
                 transition: .3s ease;
@@ -142,9 +141,9 @@
         }
         .buttons a {
             display: inline-block;
-            padding: 10px 20px  ;
-            background-color: #FFFFFF; /* Verde */
-            color: #000000;
+            padding: 10px 20px;
+            background-color: #ff69b4; /* Rosa Barbie */
+            color: white;
             text-align: center;
             text-decoration: none;
             font-size: 16px;
@@ -154,23 +153,22 @@
             margin: 25px;
         }
         .buttons a:hover {
-            background-color: #acacac; /* Verde más oscuro al pasar el ratón */
+            background-color: #ff4da6; /* Rosa más oscuro al pasar el ratón */
         }
         
     </style>
 </head>
 <body>
     <article>
-        <img src="./Images/Infantiles/FondoBarbie.jpg">
+        <img src="./Images/Infantiles/FondoBarbie.jpg" alt="Fondo Barbie">
         <div>
             <h2>¡Barbie te invita a su fiesta de cumpleaños!</h2>
-            <p><strong>Nombre del cumpleañero:</strong> Barbie</p>
+            <p><strong>Cumpleañera:</strong> Barbie</p>
             <p><strong>Fecha:</strong> Sábado, 15 de junio de 2024</p>
         </div>
-        <img src="./Images/Infantiles/Barbie.png" style="width: 140px;">
+        <img src="./Images/Infantiles/Barbie.png" alt="Barbie">
     </article>
    
-
     <section class="buttons">
         <a href="#"><strong>Lista de regalos</strong></a>
         <a href="https://www.google.com/maps/place/Oscorp+Tower,+Nueva+York" target="_blank"><strong>Ver Ubicación</strong></a>
