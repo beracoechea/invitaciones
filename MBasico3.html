@@ -141,7 +141,7 @@
     </style>
 </head>
 <body>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdX9YXQfO_Xd...formResponse" w
+   
     <header class="header">
         <section class="Nombres">
             <h2>Nuestra Boda</h2>
@@ -197,51 +197,39 @@
     </header>
     <!-- Asegúrate de incluir la biblioteca SheetJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-
-
     <script>
         function mostrarPanel() {
             document.getElementById('panel').style.display = 'block';
         }
-
-        function mostrarTrivia() {
-            document.getElementById('trivia').style.display = 'block';
-        }
-
-        function enviarDatos(event) {
-            event.preventDefault();
-
+    
+        async function enviarDatos(event) {
+            event.preventDefault(); // Evita que el formulario se envíe normalmente
+    
             var nombre = document.getElementById('nombre').value;
-
-            document.getElementById('panel').style.display = 'none';
-            document.getElementById('trivia').style.display = 'none';
+    
+            try {
+                const response = await fetch('/generate-excel', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ nombre: nombre })
+                });
+    
+                const data = await response.json();
+    
+                if (data.success) {
+                    alert('Asistencia confirmada y guardada con éxito.');
+                } else {
+                    alert('Hubo un problema al guardar la asistencia.');
+                }
+    
+                document.getElementById('panel').style.display = 'none';
+            } catch (error) {
+                console.error('Error:', error);
+            }
         }
-        //Funcion crear excel.
-
-        function enviarDatos(event) {
-        event.preventDefault();
-
-        var nombre = document.getElementById('nombre').value;
-
-        // Crear un objeto con los datos
-        var data = [{
-            Nombre: nombre,
-            Confirmación: 'Asistirá'
-        }];
-
-        // Convertir el objeto a una hoja de cálculo
-        var wb = XLSX.utils.book_new();
-        var ws = XLSX.utils.json_to_sheet(data);
-        XLSX.utils.book_append_sheet(wb, ws, "Asistencias");
-
-        // Guardar el archivo
-        var nombreArchivo = 'asistencias.xlsx';
-        XLSX.writeFile(wb, nombreArchivo);
-
-        // Ocultar el panel después de enviar los datos
-        document.getElementById('panel').style.display = 'none';
-        document.getElementById('trivia').style.display = 'none';
-    }
     </script>
+   
 </body>
 </html>
