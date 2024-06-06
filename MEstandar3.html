@@ -165,10 +165,44 @@
         #panel button[type="submit"]:hover {
             background-color: #5D4037; /* Tono marrón más oscuro */
         }
+
+        .Galeria {
+                background-color: #795548; /* Sección Galería */
+                color: #fff; 
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+
+            .Galeria h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .panal {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-auto-rows: 180px; /* Altura del panal */
+                grid-gap: 10px;
+            }
+
+            .imagen {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: transform 0.3s ease-in-out;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            }
+
+            .imagen:hover {
+                transform: scale(1.3); /* Escala al hacer hover */
+            }
     </style>
 </head>
 <body>
     <header class="header">
+
         <section class="Nombres">
             <h2>Nuestra Boda</h2>
             <h1>Jorge & Gabriela</h1>
@@ -205,6 +239,18 @@
                 <img class="CImg" src="Images/Evento.jpg" alt="Salón de Eventos">
             </div>
         </section>
+        
+        <section class="Galeria">
+            <h2>Galería de Fotos</h2>
+            <div class="panal">
+                <img src="Images/pareja.jpg" alt="Foto 1" class="imagen">
+                <img src="Images/pareja.jpg" alt="Foto 2" class="imagen">
+               
+                <img src="Images/pareja.jpg" alt="Foto 3" class="imagen">
+                <img src="Images/pareja.jpg" alt="Foto 3" class="imagen">
+                <!-- Agrega más imágenes según sea necesario -->
+            </div>
+        </section>
 
         <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
         <div id="panel" style="display: none;">
@@ -215,14 +261,7 @@
             </form>
         </div>
      
-        <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
-        <div id="panel" style="display: none;">
-            <form id="formulario" onsubmit="enviarDatos(event)">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
+       
     </header>
 
     <!-- Asegúrate de incluir la biblioteca SheetJS -->

@@ -140,20 +140,22 @@ header a {
 
 .arrows {
     position: absolute;
-    top: 80%;
+    top: 70%;
     right: 52%;
     width: 300px;
     max-width: 30%;
     display: flex;
     gap: 10px;
     align-items: center;
+    
+   
 }
 
 .arrows button {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgba(229, 255, 0, 0.267);
+    background-color: rgba(0, 0, 0, 0.267);
     border: none;
     font-family: monospace;
     color: #000000;
@@ -165,7 +167,7 @@ header a {
 
 .arrows button:hover {
     background-color: #eee;
-    color: #555;
+    color: #000000;
 }
 
 .carousel .list .item:nth-child(1) {
