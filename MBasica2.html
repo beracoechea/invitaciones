@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e8f5e9; /* Fondo verde pastel claro */
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #2e7d32; /* Texto verde oscuro */
+        }
+        header {
+            background: #ffffff; /* Fondo blanco */
+            color: #2e7d32; /* Texto verde oscuro */
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .Nombres {
+            text-align: center;
+        }
+        .Nombres h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 3em;
+            margin: 0;
+            color: #388e3c; /* Texto verde oscuro */
+        }
+        .Nombres h4 {
+            margin: 10px 0;
+            font-weight: normal;
+            color: #81c784; /* Texto verde pastel */
+        }
+        .Personajes {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            background: #ffffff; /* Fondo blanco */
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .Personajes h3 {
+            font-weight: 600;
+            margin: 10px 0;
+            color: #388e3c; /* Texto verde oscuro */
+        }
+        .Personajes h4 {
+            font-weight: 300;
+            margin: 20px 0 10px;
+            color: #81c784; /* Texto verde pastel */
+        }
+        .padrinos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            color: #2e7d32; /* Texto verde oscuro */
+        }
+        .padrinos h4 {
+            margin: 0;
+        }
+        .fecha {
+            background: #ffffff; /* Fondo blanco */
+            color: #2e7d32; /* Texto verde oscuro */
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .fecha h4 {
+            margin: 0;
+            font-weight: 300;
+            color: #81c784; /* Texto verde pastel */
+        }
+        .fecha h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 3em;
+            margin: 10px 0 0;
+            color: #388e3c; /* Texto verde oscuro */
+        }
+        .Ubicaciones {
+            background: #ffffff; /* Fondo blanco */
+            color: #2e7d32; /* Texto verde oscuro */
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .Ubicaciones h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 2.5em;
+            margin: 10px 0;
+            color: #388e3c; /* Texto verde oscuro */
+        }
+        .Ubicaciones a {
+            font-size: 1em;
+            color: #388e3c; /* Enlace verde oscuro */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .Ubicaciones a:hover {
+            text-decoration: underline;
+            color: #2e7d32; /* Enlace verde oscuro */
+        }
+        .Ubicaciones p {
+            margin: 10px 0;
+            color: #2e7d32; /* Texto verde oscuro */
+        }
+        .confirm-button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 20px 0;
+            background-color: #66bb6a; /* Fondo del botón verde */
+            color: #ffffff; /* Texto del botón blanco */
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .confirm-button:hover {
+            background-color: #388e3c; /* Fondo del botón verde oscuro al pasar el cursor */
+        }
+    </style>
+</head>
+<body>
+    <header class="header fade-in">
+        <section class="Nombres">
+            <h4>Tenemos el honor de invitarlos a celebrar</h4>
+            <h1>Karla <br> & <br> Pedro</h1>
+            <h4>Con la bendición de Dios y nuestros padres</h4>
+        </section>
+    </header>
+    <section class="Personajes">
+        <h4>Nuestros padrinos</h4>
+        <div class="padrinos">
+            <h4>Carlos Gonzales y María Fernanda Lopez</h4>
+        </div>
+        <h3>Novios</h3>
+        <div class="novios">
+            <h3>Karla Veronica Perez Aguirre</h3>
+            <h3>Pedro Salazar Martinez</h3>
+        </div>
+    </section>
+    <section class="fecha">
+        <h4>Los esperamos el</h4>
+        <h1>Sábado 20 de Junio del 2025</h1>
+    </section>
+    <section class="Ubicaciones">
+        <h2>Ceremonia</h2>
+        <p>Av. Fray Antonio Alcalde 10, Zona Centro, 44100 Guadalajara, Jal.</p>
+        <a href="https://maps.app.goo.gl/3YAx6EC36c9jFbjWA" target="_blank"><strong>Ver Ubicación</strong></a>
+        <h2>Recepción</h2>
+        <p>Av Ramón Corona #5243, 45201 Guadalajara, Jal </p>
+        <a href="https://maps.app.goo.gl/cP92VA2VDhX485DP6" target="_blank"><strong>Ver Ubicación</strong></a>
+        <h2>Agradecemos nos puedas ayudar confirmando tu asistencia</h2>
+        <a href="https://wa.me/?text=Hola,%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Karla%20y%20Pedro" class="confirm-button" target="_blank">Confirmar Asistencia</a>
+    </section>
+</body>
+</html>
