@@ -4,135 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitify</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #a9a8a4; /* Fondo beige */
+            background-color: #e8f5e9; /* Fondo verde pastel claro */
             margin: 0;
             padding: 0;
-            font-family: 'Open Sans', sans-serif;
-            color: #000000; /* Texto negro */
+            font-family: 'Montserrat', sans-serif;
+            color: #2e7d32; /* Texto verde oscuro */
         }
         header {
             background: #ffffff; /* Fondo blanco */
-            color: #000000; /* Texto negro */
+            color: #2e7d32; /* Texto verde oscuro */
             max-width: 800px;
             margin: 20px auto;
             border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             text-align: center;
-            position: relative;
         }
         .Nombres {
             text-align: center;
         }
         .Nombres h1 {
             font-family: 'Lobster', cursive;
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 0;
-            color: #1c3062; /* Texto negro */
+            color: #388e3c; /* Texto verde oscuro */
         }
         .Nombres h4 {
-            margin: 0;
+            margin: 10px 0;
             font-weight: normal;
-            color: #000000; /* Texto negro */
+            color: #81c784; /* Texto verde pastel */
         }
         .Personajes {
-            max-width: 100%;
-            margin: 20px;
+            max-width: 800px;
+            margin: 20px auto;
             text-align: center;
-            color: #000000; /* Texto negro */
+            background: #ffffff; /* Fondo blanco */
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
         .Personajes h3 {
-            font-weight: normal;
+            font-weight: 600;
             margin: 10px 0;
-            color: #000000; /* Texto negro */
+            color: #388e3c; /* Texto verde oscuro */
         }
-        .Personajes h5 {
-            font-weight: normal;
+        .Personajes h4 {
+            font-weight: 300;
             margin: 20px 0 10px;
-            color: #000000; /* Texto negro */
+            color: #81c784; /* Texto verde pastel */
         }
         .padrinos {
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
+            color: #2e7d32; /* Texto verde oscuro */
         }
-        .novios {
-            display: flex;
-            justify-content: space-between;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #000000; /* Texto negro */
-        }
-        .novios h3 {
+        .padrinos h4 {
             margin: 0;
-            color: #000000; /* Texto negro */
         }
         .fecha {
             background: #ffffff; /* Fondo blanco */
-            color: #000000; /* Texto negro */
+            color: #2e7d32; /* Texto verde oscuro */
             max-width: 800px;
             margin: 20px auto;
             border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
         .fecha h4 {
             margin: 0;
-            font-weight: normal;
-            color: #000000; /* Texto negro */
+            font-weight: 300;
+            color: #81c784; /* Texto verde pastel */
         }
         .fecha h1 {
             font-family: 'Lobster', cursive;
-            font-size: 2.5em;
+            font-size: 3em;
             margin: 10px 0 0;
-            color: #000000; /* Texto negro */
+            color: #388e3c; /* Texto verde oscuro */
         }
         .Ubicaciones {
             background: #ffffff; /* Fondo blanco */
-            color: #000000; /* Texto negro */
+            color: #2e7d32; /* Texto verde oscuro */
             max-width: 800px;
             margin: 20px auto;
             border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
         .Ubicaciones h2 {
             font-family: 'Lobster', cursive;
-            font-size: 2em;
+            font-size: 2.5em;
             margin: 10px 0;
-            color: #000000; /* Texto negro */
+            color: #388e3c; /* Texto verde oscuro */
         }
         .Ubicaciones a {
             font-size: 1em;
-            color: #000000; /* Enlace negro */
+            color: #388e3c; /* Enlace verde oscuro */
             text-decoration: none;
             font-weight: bold;
         }
         .Ubicaciones a:hover {
             text-decoration: underline;
-            color: #555555; /* Enlace gris oscuro al pasar el cursor */
+            color: #2e7d32; /* Enlace verde oscuro */
         }
         .Ubicaciones p {
             margin: 10px 0;
-            color: #000000; /* Texto negro */
+            color: #2e7d32; /* Texto verde oscuro */
         }
         .confirm-button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 25px;
             margin: 20px 0;
-            background-color: #477b49; /* Fondo del botón negro */
+            background-color: #66bb6a; /* Fondo del botón verde */
             color: #ffffff; /* Texto del botón blanco */
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            transition: background-color 0.3s ease;
         }
         .confirm-button:hover {
-            background-color: #a29c9c; /* Fondo del botón gris oscuro al pasar el cursor */
+            background-color: #388e3c; /* Fondo del botón verde oscuro al pasar el cursor */
         }
     </style>
 </head>
@@ -145,14 +142,14 @@
         </section>
     </header>
     <section class="Personajes">
-        <div class="novios">
-            <h3>Karla Veronica Perez Aguirre</h3>
-            <br>
-            <h3>Pedro Salazar Martinez</h3>
-        </div>
         <h4>Nuestros padrinos</h4>
         <div class="padrinos">
             <h4>Carlos Gonzales y María Fernanda Lopez</h4>
+        </div>
+        <h3>Novios</h3>
+        <div class="novios">
+            <h3>Karla Veronica Perez Aguirre</h3>
+            <h3>Pedro Salazar Martinez</h3>
         </div>
     </section>
     <section class="fecha">
