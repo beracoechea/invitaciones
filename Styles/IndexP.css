@@ -405,19 +405,24 @@ header a {
     margin-left: 2%;
 }
 
-.tarjetas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+.carousel-container {
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    white-space: nowrap; /* Evita que las imágenes se envuelvan */
+    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en dispositivos iOS */
     padding: 20px;
     margin-left: 5%;
 }
 
+.tarjetas {
+    display: inline-flex; /* Contenedor de tarjetas se muestra en línea */
+    gap: 20px; /* Espacio entre las tarjetas */
+}
+
 .card {
+    width: 300px; /* Ancho fijo de cada tarjeta */
+    height: 350px; /* Altura fija de cada tarjeta */
     position: relative;
-    width: 90%;
-    height: 350px;
-    perspective: 1000px; /* Asegúrate de tener la perspectiva definida */
+    perspective: 1000px;
 }
 
 .card .face {
@@ -432,7 +437,7 @@ header a {
 
 .card .front {
     transform: rotateY(0deg);
-    box-shadow: 0 5px 10px #aaaaaa; /* Sombra gris */
+    box-shadow: 0 5px 10px #aaaaaa;
 }
 
 .card .front img {
@@ -448,20 +453,20 @@ header a {
     height: 45px;
     line-height: 45px;
     color: #ffffff;
-    background-color: rgba(150, 150, 150, 0.4); /* Fondo gris transparente */
+    background-color: rgba(150, 150, 150, 0.4);
     text-align: center;
 }
 
 .card .back {
     transform: rotateY(180deg);
-    background: #ffffff; /* Fondo blanco */
+    background: #ffffff;
     padding: 15px;
-    color: #777777; /* Texto gris claro */
+    color: #777777;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    box-shadow: 0 5px 10px #aaaaaa; /* Sombra gris */
+    box-shadow: 0 5px 10px #aaaaaa;
     font-size: 13px;
 }
 
@@ -472,7 +477,7 @@ header a {
 }
 
 .card .back .link a {
-    color: #777777; /* Texto gris claro */
+    color: #777777;
 }
 
 .card .back h3 {
