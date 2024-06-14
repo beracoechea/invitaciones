@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitify</title>
+    <link rel="shortcut icon" href="./Images/marca/DarkBack.png" type="image/x-icon">
+
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #a9a8a4; /* Fondo beige */
+       body {
+            background-color: #fbfada; /* Fondo */
             margin: 0;
             padding: 0;
-            font-family: 'Open Sans', sans-serif;
-            color: #000000; /* Texto negro */
         }
         header {
-            background: #ffffff; /* Fondo blanco */
-            color: #000000; /* Texto negro */
+            background: #12372a; /* Encabezado */
+            color: #fff; /* Texto */
             max-width: 800px;
             margin: 20px auto;
             border-radius: 10px;
@@ -25,149 +25,382 @@
             position: relative;
         }
         .Nombres {
-            text-align: center;
+            background-color: #436850; /* Sección Nombres */
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .Nombres h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 36px;
         }
         .Nombres h1 {
             font-family: 'Lobster', cursive;
-            font-size: 2.5em;
-            margin: 0;
-            color: #1c3062; /* Texto negro */
+            font-size: 48px;
         }
-        .Nombres h4 {
-            margin: 0;
-            font-weight: normal;
-            color: #000000; /* Texto negro */
+        .pareja {
+            border-radius: 50%;
+            height: 40%;
+            width: 50%;
         }
-        .Personajes {
-            max-width: 100%;
-            margin: 20px;
+        .frase {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 24px;
+            color: #fff;
+            margin-top: 20px;
+            font-style: italic;
             text-align: center;
-            color: #000000; /* Texto negro */
-        }
-        .Personajes h3 {
-            font-weight: normal;
-            margin: 10px 0;
-            color: #000000; /* Texto negro */
-        }
-        .Personajes h5 {
-            font-weight: normal;
-            margin: 20px 0 10px;
-            color: #000000; /* Texto negro */
-        }
-        .padrinos {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .novios {
-            display: flex;
-            justify-content: space-between;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #000000; /* Texto negro */
-        }
-        .novios h3 {
-            margin: 0;
-            color: #000000; /* Texto negro */
         }
         .fecha {
-            background: #ffffff; /* Fondo blanco */
-            color: #000000; /* Texto negro */
-            max-width: 800px;
-            margin: 20px auto;
-            border-radius: 10px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #fff;
+        }
+        .Vestimenta {
+            background-color: #adbc9f; /* Sección Vestimenta */
+            color: #fff; /* Texto */  
+            margin: 20px 0;
             padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
+            border-radius: 10px;
         }
-        .fecha h4 {
-            margin: 0;
-            font-weight: normal;
-            color: #000000; /* Texto negro */
+        .Vestimenta h2 {
+            color: #fff;
         }
-        .fecha h1 {
-            font-family: 'Lobster', cursive;
-            font-size: 2.5em;
-            margin: 10px 0 0;
-            color: #000000; /* Texto negro */
+        .Vestimenta p {
+            color: #fff;
+            font-style: italic;
+        }
+        .Vestimenta img {
+            height: 60px;
+            width: 60px;
+            margin: 20px;
         }
         .Ubicaciones {
-            background: #ffffff; /* Fondo blanco */
-            color: #000000; /* Texto negro */
-            max-width: 800px;
-            margin: 20px auto;
-            border-radius: 10px;
+            background-color: #adbc9f; /* Sección Ubicaciones */
+            color: #fff; /* Texto */
             padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .Ubicacion {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            background-color: #436850; /* Fondo Ubicación */
+            border-radius: 10px;
+            padding: 10px;
             text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .Ubicaciones h2 {
-            font-family: 'Lobster', cursive;
-            font-size: 2em;
-            margin: 10px 0;
-            color: #000000; /* Texto negro */
+        .Ubicacion.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .Ubicaciones a {
-            font-size: 1em;
-            color: #000000; /* Enlace negro */
-            text-decoration: none;
-            font-weight: bold;
+        .CImg {
+            width: 40%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            
         }
-        .Ubicaciones a:hover {
+            .Galeria {
+                background-color: #adbc9f; /* Sección Galería */
+                color: #fff; 
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+
+            .Galeria h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .panal {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-auto-rows: 180px; /* Altura del panal */
+                grid-gap: 10px;
+            }
+
+            .imagen {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: transform 0.3s ease-in-out;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            }
+
+            .imagen:hover {
+                transform: scale(1.3); /* Escala al hacer hover */
+            }
+        .info {
+            flex: 1;
+            color: #fff;
+            text-align: left;
+            padding: 10px;
+        }
+        .info h3 {
+            margin-top: 0;
+            color: #fff;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .info p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        a {
+            color: #fff;
             text-decoration: underline;
-            color: #555555; /* Enlace gris oscuro al pasar el cursor */
         }
-        .Ubicaciones p {
-            margin: 10px 0;
-            color: #000000; /* Texto negro */
-        }
-        .confirm-button {
-            display: inline-block;
+        .confirmar, .toggle-ubicacion {
+            background-color: #07bc19; /* Botón Confirmar */
+            color: #fff;
             padding: 10px 20px;
-            margin: 20px 0;
-            background-color: #477b49; /* Fondo del botón negro */
-            color: #ffffff; /* Texto del botón blanco */
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
-            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
         }
-        .confirm-button:hover {
-            background-color: #a29c9c; /* Fondo del botón gris oscuro al pasar el cursor */
+        .confirmar:hover, .toggle-ubicacion:hover {
+            background-color: #6d4c41;
+        }
+        #panel {
+            display: none;
+            background-color: #adbc9f; /* Panel */
+            color: #fff; /* Texto */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 20px auto 0;
+        }
+        #panel label {
+            display: block;
+            margin-bottom: 10px;
+            color: #3E2723;
+            font-size: 16px;
+        }
+        #panel input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #3E2723;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        #panel button[type="submit"] {
+            background-color: #04a23b;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #panel button[type="submit"]:hover {
+            background-color: #5D4037;
+        }
+        #contador {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        /* Specific styles for the second location */
+        .Ubicacion:nth-child(2) {
+            flex-direction: row-reverse;
         }
     </style>
 </head>
 <body>
     <header class="header fade-in">
         <section class="Nombres">
-            <h4>Tenemos el honor de invitarlos a celebrar</h4>
-            <h1>Karla <br> & <br> Pedro</h1>
-            <h4>Con la bendición de Dios y nuestros padres</h4>
+            
+            <h2>Nuestra Boda 
+                <div class="tiempo-restante">
+                    <div id="contador"></div>
+                </div>
+            </h2>
+            <h1>Jorge & Gabriela</h1>
+            <img class="pareja" src="Images/pareja.jpg" alt="Jorge y Gabriela">
+            <p class="frase">"En cada latido, en cada suspiro, en cada mirada, hay un eco de nuestro amor que nos guía hacia este día mágico. ¡Ven y únete a nosotros mientras celebramos el comienzo de nuestra eternidad juntos!"</p>
+            <div class="fecha">Fecha de la Boda: 20 de Julio, 2024</div>
         </section>
+
+        <div id="contador"></div>
+
+        <section class="Vestimenta">
+            <h2>Código de Vestimenta</h2>
+            <p>"Te invitamos a vestir elegante y formal para esta ocasión especial."</p>
+            <img src="Images/svg/traje.png" alt="Formal">
+            <img src="Images/svg/vestido.png" alt="Formal">
+        </section>
+
+        <section class="Ubicaciones">
+            <div id="ubicacion-templo" class="Ubicacion">
+                <img class="CImg" src="Images/Templo.jpg" alt="Templo">
+                <div class="info">
+                    <h3>Catedral de Guadalajara</h3>
+                    <p><strong>Ubicación:</strong> Av. Fray Antonio Alcalde 10, Zona Centro, 44100 Guadalajara, Jal.</p>
+                    <p><strong>Horario:</strong> 5:00 - 6:00 PM</p>
+                    <a href="https://maps.app.goo.gl/3YAx6EC36c9jFbjWA">Ver en el mapa</a>
+                </div>
+            </div>
+            
+            <div id="ubicacion-lago" class="Ubicacion">   
+                <img class="CImg" src="Images/Evento.jpg" alt="Salón de Eventos">
+                <div class="info">
+                    <h3>Lago del Rey</h3>
+                    <p><strong>Ubicación:</strong> Av Ramón Corona #5243, 45201 Guadalajara, Jal.</p>
+                    <p><strong>Horario:</strong> 7:00 PM - 1:00 AM</p>
+                    <a href="https://maps.app.goo.gl/cP92VA2VDhX485DP6">Ver en el mapa</a>
+                </div>
+            </div>
+            
+            <div id="ubicacion-hotel" class="Ubicacion">
+                <img class="CImg" src="Images/Hotel.jpg" alt="Hotel">
+                <div class="info">
+                    <h3>Hotel RIU</h3>
+                    <p><strong>Ubicación:</strong> Av. Adolfo López Mateos Sur 830, Chapalita, 44500 Guadalajara, Jal.</p>
+                    <a href="https://maps.app.goo.gl/ZVtd89DZJEDjfn1KA">Ver en el mapa</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="Galeria">
+            <h2>Galería de Fotos</h2>
+            <div class="panal">
+                <img src="Images/pareja.jpg" alt="Foto 1" class="imagen">
+                <img src="Images/pareja.jpg" alt="Foto 2" class="imagen">
+                <img src="Images/pareja.jpg" alt="Foto 3" class="imagen">
+                
+                <img src="Images/pareja.jpg" alt="Foto 3" class="imagen">
+                <!-- Agrega más imágenes según sea necesario -->
+            </div>
+        </section>
+
+        <button class="confirmar" onclick="mostrarPanel()">Confirmar Asistencia</button>
+        <div id="panel">
+            <form id="formulario" onsubmit="enviarDatos(event)">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <a href="https://docs.google.com/forms/d/1LWqlynwrZzg7ouLkFwNokQjFkXfIt-WDLT2ixd0UyoY/edit"><button class="confirmar">Trivia de los Novios</button></a>
     </header>
-    <section class="Personajes">
-        <div class="novios">
-            <h3>Karla Veronica Perez Aguirre</h3>
-            <br>
-            <h3>Pedro Salazar Martinez</h3>
-        </div>
-        <h4>Nuestros padrinos</h4>
-        <div class="padrinos">
-            <h4>Carlos Gonzales y María Fernanda Lopez</h4>
-        </div>
-    </section>
-    <section class="fecha">
-        <h4>Los esperamos el</h4>
-        <h1>Sábado 20 de Junio del 2025</h1>
-    </section>
-    <section class="Ubicaciones">
-        <h2>Ceremonia</h2>
-        <p>Av. Fray Antonio Alcalde 10, Zona Centro, 44100 Guadalajara, Jal.</p>
-        <a href="https://maps.app.goo.gl/3YAx6EC36c9jFbjWA" target="_blank"><strong>Ver Ubicación</strong></a>
-        <h2>Recepción</h2>
-        <p>Av Ramón Corona #5243, 45201 Guadalajara, Jal </p>
-        <a href="https://maps.app.goo.gl/cP92VA2VDhX485DP6" target="_blank"><strong>Ver Ubicación</strong></a>
-        <h2>Agradecemos nos puedas ayudar confirmando tu asistencia</h2>
-        <a href="https://wa.me/?text=Hola,%20confirmo%20mi%20asistencia%20a%20la%20boda%20de%20Karla%20y%20Pedro" class="confirm-button" target="_blank">Confirmar Asistencia</a>
-    </section>
+
+    <script>
+        function mostrarPanel() {
+            document.getElementById('panel').style.display = 'block';
+        }
+
+        function enviarDatos(event) {
+            event.preventDefault(); // Evita que el formulario se envíe normalmente
+    
+            var nombre = document.getElementById('nombre').value;
+    
+            // Aquí enviarías los datos al servidor utilizando AJAX
+            // Por ejemplo, usando fetch o XMLHttpRequest
+            // Una vez que recibas una respuesta del servidor, podrías mostrar un mensaje de confirmación al usuario
+    
+            // Ocultar el panel después de enviar los datos
+            document.getElementById('panel').style.display = 'none';
+        }
+        //aqui esta la funcion del excel
+        //Deben incluir la libreria que coloque en la linea 220
+
+         function enviarDatos(event) {
+        event.preventDefault(); // Evita que el formulario se envíe normalmente
+
+        var nombre = document.getElementById('nombre').value;
+
+        // Crear un objeto con los datos
+        var data = [{
+            Nombre: nombre,
+            Confirmación: 'Asistirá'
+        }];
+
+        // Convertir el objeto a una hoja de cálculo
+        var wb = XLSX.utils.book_new();
+        var ws = XLSX.utils.json_to_sheet(data);
+        XLSX.utils.book_append_sheet(wb, ws, "Asistencias");
+
+        // Guardar el archivo
+        var nombreArchivo = 'asistencias.xlsx';
+        XLSX.writeFile(wb, nombreArchivo);
+
+        // Ocultar el panel después de enviar los datos
+        document.getElementById('panel').style.display = 'none';
+    }
+    
+        // Función de cuenta regresiva
+        function cuentaRegresiva() {
+            var bodaFecha = new Date("Jul 20, 2024 00:00:00").getTime();
+            var ahora = new Date().getTime();
+            var distancia = bodaFecha - ahora;
+
+            var dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            var horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            var segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("contador").innerHTML = "Faltan " + dias + "d " + horas + "h " + minutos + "m " + segundos + "s ";
+
+            if (distancia < 0) {
+                clearInterval(x);
+                document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
+            }
+        }
+
+        setInterval(cuentaRegresiva, 1000);
+
+        // Intersection Observer para animar las ubicaciones
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            const ubicaciones = document.querySelectorAll(".Ubicacion");
+            ubicaciones.forEach(ubicacion => {
+                observer.observe(ubicacion);
+            });
+        });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const imagenes = document.querySelectorAll(".imagen");
+    
+    imagenes.forEach(imagen => {
+        imagen.addEventListener("click", function() {
+            this.classList.toggle("ampliar");
+        });
+    });
+});
+    </script>
 </body>
 </html>

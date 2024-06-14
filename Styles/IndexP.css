@@ -2,18 +2,17 @@
 
 body {
     font-family: Poppins, sans-serif;
-    background-color: #000000;
-    color: #eee;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333333; /* Texto en gris oscuro */
     margin: 0;
-    border-color: #000;
-    
+    border-color: #ffffff; /* Coincide con el fondo */
     font-size: 12px;
 }
 
 a {
     text-decoration: none;
     font-size: auto;
-    color: #fff;
+    color: #ffffff; /* Color de texto gris medio */
 }
 
 header {
@@ -59,8 +58,8 @@ header a {
     transform: translateX(-50%);
     padding-right: 30%;
     box-sizing: border-box;
-    color: #fff;
-    text-shadow: 0 5px 10px #0004;
+    color: #ffffff; /* Texto en gris oscuro */
+    text-shadow: 0 5px 10px rgba(255, 255, 255, 0.3); /* Sombra para contraste */
 }
 
 .carousel .list .item .content .author {
@@ -76,7 +75,7 @@ header a {
 }
 
 .carousel .list .item .content .topic {
-    color: #b18c03;
+    color: #d0b83f; /* Texto en gris claro */
 }
 
 .carousel .list .item .content .buttons {
@@ -89,7 +88,7 @@ header a {
 
 .carousel .list .item .content .button {
     border: none;
-    background-color: #eee;
+    background-color: #dddddd; /* Botón gris claro */
     letter-spacing: 3px;
     font-family: Poppins, sans-serif;
     font-weight: 500;
@@ -100,8 +99,8 @@ header a {
 
 .carousel .list .item .content .button:nth-child(2) {
     background-color: transparent;
-    color: #eee;
-    border: 1px solid #eee;
+    color: #ffffff; /* Texto en gris oscuro */
+    border: 1px solid #333333; /* Borde en gris oscuro */
 }
 
 .thumbnail {
@@ -125,7 +124,7 @@ header a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 30px;   
+    border-radius: 30px;
 }
 
 .thumbnail .item .content {
@@ -133,7 +132,7 @@ header a {
     bottom: 10px;
     left: 10px;
     right: 10px;
-    color: #fff;
+    color: #ffffff;
 }
 
 .thumbnail .item .content .title {
@@ -149,18 +148,16 @@ header a {
     display: flex;
     gap: 10px;
     align-items: center;
-    
-   
 }
 
 .arrows button {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.3); /* Fondo blanco con transparencia */
     border: none;
     font-family: monospace;
-    color: #000000;
+    color: #ffffff; /* Texto en gris oscuro */
     font-weight: bold;
     font-size: large;
     transition: .5s;
@@ -168,8 +165,8 @@ header a {
 }
 
 .arrows button:hover {
-    background-color: #eee;
-    color: #000000;
+    background-color: #dddddd; /* Fondo gris claro */
+    color: #333333; /* Texto en gris oscuro */
 }
 
 .carousel .list .item:nth-child(1) {
@@ -215,7 +212,7 @@ header a {
     }
 }
 
-.carousel.next .list .item:nth-child(1) img{
+.carousel.next .list .item:nth-child(1) img {
     width: 150px;
     height: 220px;
     position: absolute;
@@ -225,8 +222,8 @@ header a {
     animation: showImage 0.5s linear 1 forwards;
 }
 
-@keyframes showImage{
-    to{
+@keyframes showImage {
+    to {
         width: 100%;
         height: 100%;
         left: 0;
@@ -235,48 +232,51 @@ header a {
     }
 }
 
-.carousel.next .thumbnail .item:nth-last-child(1){
+.carousel.next .thumbnail .item:nth-last-child(1) {
     width: 0;
     overflow: hidden;
     animation: showThumbnail .5s linear 1 forwards;
 }
 
 @keyframes showThumbnail {
-    to{
+    to {
         width: 150px;
     }
 }
 
-.carousel.next .thumbnail{
+.carousel.next .thumbnail {
     transform: translateX(150px);
-    animation: transformThumbnail .5s linear 1 forwards;  
+    animation: transformThumbnail .5s linear 1 forwards;
 }
-@keyframes transformThumbnail{
-    to{
+
+@keyframes transformThumbnail {
+    to {
         transform: translateX(0);
     }
 }
 
-.carousel.prev .list .item:nth-child(2){
+.carousel.prev .list .item:nth-child(2) {
     z-index: 2;
 }
-.carousel.prev .list .item:nth-child(2) img{
+
+.carousel.prev .list .item:nth-child(2) img {
     position: absolute;
     bottom: 0;
     left: 0;
     animation: outImage 0.5s linear 1 forwards;
 }
 
-@keyframes outImage{
-    to{
+@keyframes outImage {
+    to {
         width: 150px;
         height: 220px;
         border-radius: 20px;
-        left:50%;
+        left: 50%;
         bottom: 50px;
     }
 }
-.carousel.prev .thumbnail .item:nth-child(1){
+
+.carousel.prev .thumbnail .item:nth-child(1) {
     width: 0;
     overflow: hidden;
     opacity: 0;
@@ -287,12 +287,12 @@ header a {
 .carousel.prev .list .item:nth-child(2) .title,
 .carousel.prev .list .item:nth-child(2) .topic,
 .carousel.prev .list .item:nth-child(2) .des,
-.carousel.prev .list .item:nth-child(2) .buttons{
+.carousel.prev .list .item:nth-child(2) .buttons {
     animation: contentOut 1.5s linear 1 forwards;
 }
 
-@keyframes contentOut{
-    to{
+@keyframes contentOut {
+    to {
         transform: translateY(150px);
         filter: blur(20px);
         opacity: 0;
@@ -300,15 +300,14 @@ header a {
 }
 
 .carousel.next .arrows button,
-.carousel.prev .arrows button{
+.carousel.prev .arrows button {
     pointer-events: none;
 }
 
-.time{
+.time {
     width: 0%;
     height: 5px;
-    background-color: #000000;
-    ;
+    background-color: #333333; /* Color gris oscuro */
     position: absolute;
     z-index: 100;
     top: 0;
@@ -316,32 +315,30 @@ header a {
 }
 
 .carousel.next .time,
-.carousel.prev .time{
+.carousel.prev .time {
     width: 100%;
     animation: timeRunning 2s linear 1 forwards;
 }
 
-@keyframes timeRunning{
-    to{
+@keyframes timeRunning {
+    to {
         width: 0;
     }
 }
 
-@media screen and (max-width:678px) {
-    .carousel .list .item .content{
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content {
         padding-right: 0;
     }
-    .carousel .list .item .content .title{
+    .carousel .list .item .content .title {
         font-size: 30px;
-
     }
-    
 }
+
 .des {
     font-size: 16px; /* Tamaño de fuente aumentado */
-    color: #ffffff; /* Color más llamativo */
+    color: #ffffff; /* Color gris oscuro */
     font-weight: bold; /* Fuente más gruesa */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para dar más contraste */
     border: 2px solid transparent; /* Borde del mismo color para destacar más */
     padding: 5px; /* Espacio adicional alrededor del texto */
     position: relative; /* Posición relativa para poder posicionar el overlay */
@@ -356,14 +353,12 @@ header a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Color del overlay (blanco con transparencia) */
     z-index: 1; /* Asegurar que el overlay esté por encima del texto */
 }
 
-
 /* Estilos para la sección de Muestras */
 .Muestras {
-    background-color: transparent; /* Cambiar el color de fondo a transparente */
+    background-color: #ffffff; /* Fondo blanco */
     padding: 50px 0; /* Añadir espacio alrededor del contenido */
     overflow-x: auto; /* Permitir el desplazamiento horizontal */
     white-space: nowrap; /* Evitar que las imágenes se envuelvan */
@@ -386,19 +381,17 @@ header a {
 .Muestras-title {
     font-size: 32px;
     text-align: center;
-
-    color: #333; /* Color de texto original */
+    color: #333333; /* Texto en gris oscuro */
     margin-top: 10%; /* Ajustar el espacio superior */
     text-transform: uppercase;
-    border-bottom: 2px solid #333; /* Color del borde original */
+    border-bottom: 2px solid #333333; /* Borde gris oscuro */
     padding-bottom: 5px; /* Ajustar el espacio inferior */
-    background-color: #000; /* Color de fondo original */
-    color: #fff; /* Color de texto original */
+    background-color: #ffffff; /* Fondo blanco */
 }
 
 .Muestras-text {
     text-align: center;
-    color: #ffffff; /* Color de texto original */
+    color: #333333; /* Texto en gris oscuro */
     font-size: 18px;
     margin-top: 0;
     margin-bottom: 20px;
@@ -407,10 +400,9 @@ header a {
 
 .Muestras-carousel img {
     width: 300px;
-    height: 400px; 
-    margin-right: 2%; 
-    margin-left: 2%; 
-
+    height: 400px;
+    margin-right: 2%;
+    margin-left: 2%;
 }
 
 .tarjetas {
@@ -420,6 +412,7 @@ header a {
     padding: 20px;
     margin-left: 5%;
 }
+
 .card {
     position: relative;
     width: 90%;
@@ -439,7 +432,7 @@ header a {
 
 .card .front {
     transform: rotateY(0deg);
-    box-shadow: 0 5px 10px #000000;
+    box-shadow: 0 5px 10px #aaaaaa; /* Sombra gris */
 }
 
 .card .front img {
@@ -454,21 +447,21 @@ header a {
     width: 100%;
     height: 45px;
     line-height: 45px;
-    color: #fff;
-    background-color: rgba(184, 135, 11, 0.4);
+    color: #ffffff;
+    background-color: rgba(150, 150, 150, 0.4); /* Fondo gris transparente */
     text-align: center;
 }
 
 .card .back {
     transform: rotateY(180deg);
-    background: #ffffff;
+    background: #ffffff; /* Fondo blanco */
     padding: 15px;
-    color: #b18c03;
+    color: #777777; /* Texto gris claro */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    box-shadow: 0 5px 10px #000000;
+    box-shadow: 0 5px 10px #aaaaaa; /* Sombra gris */
     font-size: 13px;
 }
 
@@ -479,7 +472,7 @@ header a {
 }
 
 .card .back .link a {
-    color: #f3f3f3;
+    color: #777777; /* Texto gris claro */
 }
 
 .card .back h3 {
@@ -501,63 +494,31 @@ header a {
     transform: rotateY(360deg);
 }
 
-.leyenda-Precios{
-    color: #ffffff;
+.leyenda-Precios {
+    color: #333333; /* Texto en gris oscuro */
     text-align: center;
-}
-
-
-/* Estilos para la sección de Música */
-.Musica {
-    background-color: #a78c52; 
-    padding: 50px 0;
-    text-align: center; 
-}
-
-.Musica-container {
-    max-width: 800px;
-    margin: 0 auto; 
-    padding: 50px;
-}
-
-.Musica-title {
-    font-size: 28px; 
-    color: #000000;
-    margin-bottom: 20px; 
-}
-
-.Musica-text {
-    font-size: 18px; 
-    color: #000000; 
-    margin-bottom: 20px; 
-}
-
-.Musica-img {
-    width: 300px; 
-    height: auto; 
-    border-radius: 10% 10% 10% 10%;
 }
 
 /* Estilos para el pie de página */
 footer {
-    background-color: #000000; 
-    padding: 20px; 
-    color: #fff; 
-    text-align: center; 
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px;
+    color: #333333; /* Texto en gris oscuro */
+    text-align: center;
 }
 
 .contacto {
-    display: flex; 
-    justify-content: center; 
-    margin-bottom: 10px; 
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .contacto-icono {
-    margin: 0 10px; 
+    margin: 0 10px;
     filter: brightness(0) invert(1);
 }
 
 .contacto-icono img {
-    width: 40px; 
+    width: 40px;
     height: 40px;
 }
